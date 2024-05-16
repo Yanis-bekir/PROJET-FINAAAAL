@@ -23,4 +23,17 @@ public class Pièce extends Niveau{
         this.sol = sol ; 
         this.plafond = plafond ; 
         this.listMurs = idmurs ;
+        
+   void afficher() {
+       
+   }
+   void toString() {
+       
+   }
+   void surface() {
+       
+   }
+   void montantRevement() {
+       
+   }
 }
