@@ -44,7 +44,7 @@ public class Mur {
     }
     
     public double montantRevetement (Mur mur, Revetement revetements){
-        double montant=mur.surface()*revetements.prix();
+        double montant=mur.surface()*revetements.prix()-nbrFenetre*Fenetre.surface();
         return montant; 
     }
 }
