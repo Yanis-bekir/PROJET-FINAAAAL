@@ -26,7 +26,10 @@ public class Plafond {
     public String toString() {
         return "Plafond{" + "idPlafond=" + idPlafond + ", listeCoins=" + listeCoins + ", listeRevetements=" + listeRevetements + '}';
     }
-    MERDE LA
+      public double montantRevetement (Plafond plafond, Revetement revetements){
+        double montant=plafond.surface()*revetements.prix()-nbrFenetre*Fenetre.surface();
+        return montant; 
+    }
             
     
         
