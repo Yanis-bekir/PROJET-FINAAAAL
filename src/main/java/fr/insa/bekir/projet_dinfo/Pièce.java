@@ -14,7 +14,7 @@ public class Pièce extends Niveau{
     int idPiece;
     int sol;
     int plafond;
-    ArrayList listMurs;
+    ArrayList listeMurs=new ArrayList<Mur>();;
     
     
    Pièce(int idNiveau, int id, int sol, int plafond, ArrayList idmurs){
