@@ -14,7 +14,7 @@ public class Circulation extends Niveau {
     int idCirculation;
     int sol;
     int plafond;
-    ArrayList listMurs;
+    ArrayList listeMurs=new ArrayList<Mur>();;
     
     Circulation(int idNiveau, int id, int sol, int plafond, ArrayList idmurs){
         this.idNiveau = idNiveau ;
