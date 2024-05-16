@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Plafond {
     int idPlafond;
     ArrayList listeCoins;
-    ArrayList listeRevetements;
+    ArrayList listeRevetements=new ArrayList<Revetement>();;
     
     Plafond(int id, ArrayList listeCoins, ArrayList idRevetement){
         this.idPlafond= id;
