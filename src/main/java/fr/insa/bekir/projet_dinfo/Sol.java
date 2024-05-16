@@ -30,12 +30,23 @@ public class Sol {
         double surface = 0;
 
         for (int i = 0; i<=ListeCoins.size() - 1; i++) {
-            surface += (ListeCoins.get(i).getCx() * ListeCoins.get(i + 1).getCy()) - (ListeCoins.get(i + 1).getCx() * ListeCoins.get(i).getCy());
+            double sommex = ListeCoins.get(i).getCx();
+            double sommey = ListeCoins.get(i).getCy();
         }
+        
+        double Moyennex = sommex/ListeCoins.size();
+        double Moyenney = sommey/ListeCoins.size();
 
-        surface += (cx[ListeCoins.size() - 1].getCx() * get.cy[0]) - (cx[0] * cy[xPoints.length - 1]);
+        for (int i = 0; i<=ListeCoins.size() - 1; i++) {
+            double cote1 = sqrt((Maths.abs(ListeCoins.get(i).Cx-ListeCoins.get(i+1).Cx))**2+Maths.abs((ListeCoins.get(i).Cy-ListeCoins.get(i+1))**2));
+            double cote2 = sqrt((Maths.abs(ListeCoins.get(i).Cx-Moyennex))**2+Maths.abs((ListeCoins.get(i).Cy-Moyenney)**2));
+            double cote3 = = sqrt((Maths.abs(ListeCoins.get(i+1).Cx-Moyennex))**2+Maths.abs((ListeCoins.get(i+1).Cy-Moyenney)**2));
+            double p = (cote1+cote2+cote3)/2;
+            double surfacetriangle = sqrt(p*(p-cote1)*(p-cote2)*(p-cote3));
+            surface = surface + surfacetriangle;
+    }
 
-        return Math.abs(surface) / 2;
+        return surface;
     }
            
        }
