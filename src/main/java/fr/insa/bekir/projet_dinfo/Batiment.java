@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 public class Batiment {
     String idBatiment;
-    ArrayList listeNiveaux;
+    ArrayList listeNiveaux=new ArrayList<Niveau>();;
 
     Batiment(String id, ArrayList idNiveau) {
         this.idBatiment = id ;
