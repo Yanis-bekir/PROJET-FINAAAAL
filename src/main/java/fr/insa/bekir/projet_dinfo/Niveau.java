@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Niveau extends Batiment {
    int idNiveau;
    double hauteurSousPlafond ;
-   ArrayList ListeAppart ;
+   ArrayList ListeAppart=new ArrayList<Appartement>(); ;
 
    Niveau(int id, double idhsp, ArrayList listappart){
         this.idNiveau = id ;
