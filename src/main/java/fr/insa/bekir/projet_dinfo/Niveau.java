@@ -12,4 +12,16 @@ public class Niveau extends Batiment {
         this.hauteurSousPlafond = idhsp ;
         this.ListeAppart = listappart ;
     }
+   void afficher() {
+       
+   }
+   void toString() {
+       
+   }
+   void surface() {
+       
+   }
+   void montantRevetement() {
+       
+   }
 }
