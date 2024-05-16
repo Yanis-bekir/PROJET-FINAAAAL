@@ -14,7 +14,7 @@ public class Pièce extends Niveau{
     int idPiece;
     int sol;
     int plafond;
-    ArrayList listeMurs=new ArrayList<Mur>();;
+    ArrayList listeMurs=new ArrayList<Mur>();
     
     
    Pièce(int idNiveau, int id, int sol, int plafond, ArrayList idmurs){
@@ -23,17 +23,20 @@ public class Pièce extends Niveau{
         this.sol = sol ; 
         this.plafond = plafond ; 
         this.listMurs = idmurs ;
-        
+   }
    void afficher() {
        
    }
    void toString() {
        
    }
-   void surface() {
-       
+   double surfacePièce() {
+       return sol.surface();
    }
-   void montantRevement() {
-       
+   double montantRevetement(){
+       prix=sol.montantRevetement()+plafond.montantRevetement();
+       for (int i = 0; i<=listeMurs.size() - 1; i++) {
+           prix=prix+listeMurs.get(i).montantRevetement();
+       }
    }
 }
