@@ -47,7 +47,7 @@ public class Appartement extends Niveau {
     }
     
     
-    public void sauvegardeplafond() throws Exception{
+    public void sauvegardeAppartement() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
             writer.write("Apartement " + ";" + Appartement.getIdAppartement() + ";" + Appartement.getIdNiveauAppartement() + ";" + Appartement.getListePieces() + "\n");
