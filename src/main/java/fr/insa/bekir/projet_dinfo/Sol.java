@@ -76,7 +76,7 @@ public class Sol {
         public void sauvegardesol() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Coin " + ";" + Sol.getIdSol() + ";" + Sol.getListeCoins() + ";" + Sol.getListeRevetements() + "\n");
+            writer.write("Sol " + ";" + Sol.getIdSol() + ";" + Sol.getListeCoins() + ";" + Sol.getListeRevetements() + "\n");
             }
         }
 
