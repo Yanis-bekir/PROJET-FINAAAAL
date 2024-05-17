@@ -34,16 +34,13 @@ public class Revetement {
         return prix;
     }
 
-public class RechercheRevêtement {
+    public double RechercheRevetement(String nomfichier) {
 
    
         // Lecture du fichier texte
         List<Revetement> revêtements = lireRevêtementsFichier("revêtements.txt");
 
-        // Saisie du nom de recherche
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Saisissez le nom du revêtement à rechercher : ");
-        String nomRecherche = scanner.nextLine();
+        String nomRecherche = nomfichier;
 
         // Recherche du revêtement
         Revetement revêtementTrouvé = null;
