@@ -5,20 +5,52 @@
 package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
+import java.io.*;
 
 /**
  *
  * @author ybekir01
  */
 public class Appartement extends Niveau {
-    int idAppartement ;
-    int idNiveauAppartement ;
-    ArrayList listePieces =new ArrayList<Pièce>();
+    static int idAppartement ;
+    static int idNiveauAppartement ;
+    static ArrayList listePieces =new ArrayList<Pièce>();
     
     public Appartement(int id, int idNiveau, ArrayList nbrpieces){
             this.idAppartement = id ; 
             this.idNiveauAppartement = idNiveau ;
             this.listePieces = nbrpieces ;
     }
+
+    public static int getIdAppartement() {
+        return idAppartement;
+    }
+
+    public static void setIdAppartement(int idAppartement) {
+        Appartement.idAppartement = idAppartement;
+    }
+
+    public static int getIdNiveauAppartement() {
+        return idNiveauAppartement;
+    }
+
+    public static void setIdNiveauAppartement(int idNiveauAppartement) {
+        Appartement.idNiveauAppartement = idNiveauAppartement;
+    }
+
+    public static ArrayList getListePieces() {
+        return listePieces;
+    }
+
+    public static void setListePieces(ArrayList listePieces) {
+        Appartement.listePieces = listePieces;
+    }
     
+    
+    public void sauvegardeplafond() throws Exception{
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
+            // Écriture des revêtements dans le fichier
+            writer.write("Apartement " + ";" + Appartement.getIdAppartement() + ";" + Appartement.getIdNiveauAppartement() + ";" + Appartement.getListePieces() + "\n");
+            }
+        }
 }
