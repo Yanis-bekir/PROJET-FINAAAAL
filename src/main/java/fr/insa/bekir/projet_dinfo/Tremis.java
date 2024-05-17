@@ -8,6 +8,16 @@ package fr.insa.bekir.projet_dinfo;
  *
  * @author ybekir01
  */
-public class Tremis {
+public class Tremis extends Ouverture{
     
+    public Tremis(int idOuverture, double hauteur, double largeur) {
+        super(idOuverture, hauteur, largeur);
+    }
+    
+    public static double surfacetremis (){
+        dimY  =0.9;
+        dimX  =0.9;
+
+        return dimY* dimX;
+    } 
 }
