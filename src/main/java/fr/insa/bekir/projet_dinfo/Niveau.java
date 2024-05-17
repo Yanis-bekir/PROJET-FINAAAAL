@@ -15,9 +15,12 @@ public class Niveau extends Batiment {
    void afficher() {
        
    }
-   void toString() {
-       
-   }
+
+    @Override
+    public String toString() {
+        return "Niveau{" + "idNiveau=" + idNiveau + ", hauteurSousPlafond=" + hauteurSousPlafond + ", ListeAppart=" + ListeAppart + '}';
+    }
+   
    void surface() {
        
    }
