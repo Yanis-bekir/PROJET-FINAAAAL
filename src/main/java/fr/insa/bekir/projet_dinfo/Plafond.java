@@ -59,7 +59,7 @@ public class Plafond {
     public void sauvegardeplafond() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Coin " + ";" + Plafond.getIdPlafond() + ";" + Plafond.getListeCoins() + ";" + Plafond.getListeRevetements() + "\n");
+            writer.write("Plafond " + ";" + Plafond.getIdPlafond() + ";" + Plafond.getListeCoins() + ";" + Plafond.getListeRevetements() + "\n");
             }
         }
         
