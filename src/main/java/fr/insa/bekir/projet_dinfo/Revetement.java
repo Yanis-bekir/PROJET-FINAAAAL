@@ -36,7 +36,7 @@ public class Revetement {
 
 public class RechercheRevêtement {
 
-    public static void main(String[] args) {
+   
         // Lecture du fichier texte
         List<Revetement> revêtements = lireRevêtementsFichier("revêtements.txt");
 
@@ -87,4 +87,4 @@ public class RechercheRevêtement {
         return revêtements;
     }
 }
-}
+
