@@ -10,4 +10,14 @@ package fr.insa.bekir.projet_dinfo;
  */
 public class Fenetre extends Ouverture{
     
+    public Fenetre(int idOuverture, double hauteur, double largeur) {
+        super(idOuverture, hauteur, largeur);
+    }
+    
+    public static double surfacefenetre (){
+        dimY  =0.9;
+        dimX  =0.9;
+
+        return dimY* dimX;
+    } 
 }
