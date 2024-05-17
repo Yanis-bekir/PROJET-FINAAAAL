@@ -48,7 +48,7 @@ public class Batiment {
 }
     void dessiner{
 }
-    public void sauvegardeBatiment() throws Exception{
+    public void sauvegardebatiment() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
             writer.write("Batiment " + ";" + Batiment.getIdBatiment() + ";" + Batiment.getListeNiveaux() + "\n");
