@@ -9,17 +9,17 @@ package fr.insa.bekir.projet_dinfo;
  * @author ybekir01
  */
 public class Ouverture {
-    int idOuverture ;
-    double dimX ;
-    double dimY ;
+    static int idOuverture ;
+    static double dimX ;
+    static double dimY ;
    
-Ouverture(int id, double x, double y){
+public Ouverture(int id, double x, double y){
     this.idOuverture = id ;
     this.dimX = x ;
     this.dimY = y ;
 }
      
-    public double surfaceouverture (){
+    public static double surfaceouverture (){
         return dimY * dimX;
     }
 }
