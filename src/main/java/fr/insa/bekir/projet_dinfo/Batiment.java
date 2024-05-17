@@ -24,6 +24,22 @@ public class Batiment {
     void afficher() {
         System.out.println("Identifiant : " + this.idBatiment+ " List : " + this.listeNiveaux);
     }
+
+    public static String getIdBatiment() {
+        return idBatiment;
+    }
+
+    public static void setIdBatiment(String idBatiment) {
+        Batiment.idBatiment = idBatiment;
+    }
+
+    public static ArrayList getListeNiveaux() {
+        return listeNiveaux;
+    }
+
+    public static void setListeNiveaux(ArrayList listeNiveaux) {
+        Batiment.listeNiveaux = listeNiveaux;
+    }
     
    
     void lireBatiment{
