@@ -8,6 +8,16 @@ package fr.insa.bekir.projet_dinfo;
  *
  * @author ybekir01
  */
-public class Porte {
-    
+public class Porte extends Ouverture {
+
+    public Porte(double idOuverture ,double hauteur, double largeur) {
+        super(idOuverture, dimY, dimX);
+    }
+   
+    public double surfaceporte (){
+       dimY = 2.1;
+       dimX = 0.9;
+       return dimY*dimX;
+    }
+
 }
