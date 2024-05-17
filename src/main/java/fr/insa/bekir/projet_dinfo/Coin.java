@@ -3,16 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package fr.insa.bekir.projet_dinfo;
-
+import java.io.*;
 /**
  *
  * @author hbogas01
  */
 public class Coin {
     //declaration des attributs de la classe Coin
-    int idCoin;
-    double cx;
-    double cy;
+    static int idCoin;
+    static double cx;
+    static double cy;
     
     // Declaration du constructeur
     Coin(int id, double x,double y){
@@ -30,17 +30,21 @@ public class Coin {
         return "Coin{" + "idCoin=" + idCoin + ", cx=" + cx + ", cy=" + cy + '}';
     }
 
-    public double getCx() {
+    public static double getCx() {
         return cx;
     }
 
-    public double getCy() {
+    public static double getCy() {
         return cy;
     }
     public void setIdCoin(int idCoin) {
         this.idCoin = idCoin;
     }
 
+    public static double getIdCoin() {
+        return idCoin;
+    }
+    
     public void setcx(double cx) {
         this.cx = cx;
     }
@@ -48,7 +52,13 @@ public class Coin {
     public void setcy(double cy) {
         this.cy = cy;
     }
-
     
-}
+    public void sauvegardecoin() throws Exception{
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
+            // Écriture des revêtements dans le fichier
+            writer.write("Coin " + ";" + Coin.getIdCoin() + ";" + Coin.getCx() + ";" + Coin.getCy() + "\n");
+            }
+        } 
+    }
+  
 
