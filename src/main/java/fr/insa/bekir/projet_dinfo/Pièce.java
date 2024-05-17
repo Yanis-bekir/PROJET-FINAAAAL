@@ -5,31 +5,64 @@
 package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
+import java.io.*;
 
 /**
  *
  * @author ybekir01
  */
 public class Pièce extends Niveau{
-    int idPiece;
-    int sol;
-    int plafond;
-    ArrayList listeMurs=new ArrayList<Mur>();
+    static int idPiece;
+    static int sol;
+    static int plafond;
+    static ArrayList listeMurs=new ArrayList<Mur>();
     
     
    Pièce(int idNiveau, int id, int sol, int plafond, ArrayList idmurs){
-        this.idNiveau = idNiveau ;
         this.idPiece = id ;
         this.sol = sol ; 
         this.plafond = plafond ; 
-        this.listMurs = idmurs ;
+        this.listeMurs = idmurs ;
    }
+
+    public static int getIdPiece() {
+        return idPiece;
+    }
+
+    public static void setIdPiece(int idPiece) {
+        Pièce.idPiece = idPiece;
+    }
+
+    public static int getSol() {
+        return sol;
+    }
+
+    public static void setSol(int sol) {
+        Pièce.sol = sol;
+    }
+
+    public static int getPlafond() {
+        return plafond;
+    }
+
+    public static void setPlafond(int plafond) {
+        Pièce.plafond = plafond;
+    }
+
+    public static ArrayList getListeMurs() {
+        return listeMurs;
+    }
+
+    public static void setListeMurs(ArrayList listeMurs) {
+        Pièce.listeMurs = listeMurs;
+    }
+   
+   
    void afficher() {
        
    }
-   void toString() {
-       
-   }
+    
+   
    double surfacePièce() {
        return sol.surface();
    }
@@ -39,4 +72,13 @@ public class Pièce extends Niveau{
            prix=prix+listeMurs.get(i).montantRevetement();
        }
    }
+   
+   public void sauvegardeplafond() throws Exception{
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
+            // Écriture des revêtements dans le fichier
+            writer.write("Pièce " + ";" + Pièce.getIdPiece() + ";" + Pièce.getSol() + ";" + Pièce.getPlafond() + ";" + Pièce.getListeMurs() + "\n");
+            }
+        }
+   
+   
 }
