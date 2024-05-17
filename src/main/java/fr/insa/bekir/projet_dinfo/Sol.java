@@ -5,12 +5,13 @@
 package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
+import java.io.*;
 
 public class Sol {
     //declaration des attributs de la classe Coin
-    int idSol;
-    ArrayList ListeCoins = new ArrayList<Coin>();
-    ArrayList ListeRevetements =new ArrayList<Revetement>();
+    static int idSol;
+    static ArrayList ListeCoins = new ArrayList<Coin>();
+    static ArrayList ListeRevetements =new ArrayList<Revetement>();
 
     Sol(int id, ArrayList Coins, ArrayList idRevetements){
     this.idSol=id;
@@ -24,6 +25,30 @@ public class Sol {
     @Override
     public String toString() {
         return "Sol{" + "idSol=" + idSol + ", listeCoins=" + ListeCoins + ", ListeRevetements=" + ListeRevetements + '}';
+    }
+
+    public static int getIdSol() {
+        return idSol;
+    }
+
+    public static void setIdSol(int idSol) {
+        Sol.idSol = idSol;
+    }
+
+    public static ArrayList getListeCoins() {
+        return ListeCoins;
+    }
+
+    public static void setListeCoins(ArrayList ListeCoins) {
+        Sol.ListeCoins = ListeCoins;
+    }
+
+    public static ArrayList getListeRevetements() {
+        return ListeRevetements;
+    }
+
+    public static void setListeRevetements(ArrayList ListeRevetements) {
+        Sol.ListeRevetements = ListeRevetements;
     }
    
     public Double surface() {
@@ -48,40 +73,14 @@ public class Sol {
 
         return surface;
     }
-           
-       }
-/*public class CalculSurfaceForme {
-
-    public static void main(String[] args) {
-        // Liste des points de la forme
-        List<Point> points = new ArrayList<>();
-        points.add(new Point(0, 0));
-        points.add(new Point(5, 0));
-        points.add(new Point(5, 3));
-        points.add(new Point(2, 3));
-        points.add(new Point(0, 3));
-
-        // Calcul de la surface
-        double surfaceTotale = 0;
-        for (int i = 0; i < points.size() - 2; i++) {
-            Point pointA = points.get(i);
-            Point pointB = points.get(i + 1);
-            Point pointC = points.get(i + 2);
-
-            double surfaceTriangle = calculerSurfaceTriangle(pointA, pointB, pointC);
-            surfaceTotale += surfaceTriangle;
+        public void sauvegardesol() throws Exception{
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
+            // Écriture des revêtements dans le fichier
+            writer.write("Coin " + ";" + Sol.getIdSol() + ";" + Sol.getListeCoins() + ";" + Sol.getListeRevetements() + "\n");
+            }
         }
 
-        System.out.println("Surface de la forme : " + surfaceTotale);
-    }
+       }
 
-    private static double calculerSurfaceTriangle(Point pointA, Point pointB, Point pointC) {
-        double base = Math.abs(pointB.getX() - pointA.getX());
-        double hauteur = Math.abs(pointC.getY() - pointA.getY());
-        return (base * hauteur) / 2;
-    }
-
- */
     public Double montantRevetement() {
-}
 }
