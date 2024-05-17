@@ -1,11 +1,12 @@
 package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
+import java.io.*;
 
 public class Niveau extends Batiment {
-   int idNiveau;
-   double hauteurSousPlafond ;
-   ArrayList ListeAppart=new ArrayList<Appartement>(); ;
+   static int idNiveau;
+   static double hauteurSousPlafond ;
+   static ArrayList ListeAppart=new ArrayList<Appartement>(); ;
 
    Niveau(int id, double idhsp, ArrayList listappart){
         this.idNiveau = id ;
@@ -15,6 +16,32 @@ public class Niveau extends Batiment {
    void afficher() {
        
    }
+
+    public static int getIdNiveau() {
+        return idNiveau;
+    }
+
+    public static void setIdNiveau(int idNiveau) {
+        Niveau.idNiveau = idNiveau;
+    }
+
+    public static double getHauteurSousPlafond() {
+        return hauteurSousPlafond;
+    }
+
+    public static void setHauteurSousPlafond(double hauteurSousPlafond) {
+        Niveau.hauteurSousPlafond = hauteurSousPlafond;
+    }
+
+    public static ArrayList getListeAppart() {
+        return ListeAppart;
+    }
+
+    public static void setListeAppart(ArrayList ListeAppart) {
+        Niveau.ListeAppart = ListeAppart;
+    }
+   
+   
 
     @Override
     public String toString() {
@@ -27,4 +54,11 @@ public class Niveau extends Batiment {
    void montantRevetement() {
        
    }
+   
+   public void sauvegardeNiveau() throws Exception{
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
+            // Écriture des revêtements dans le fichier
+            writer.write("Niveau " + ";" + Niveau.getIdNiveau() + ";" + Niveau.getHauteurSousPlafond() + ";" + Niveau.getListeAppart() + "\n");
+            }
+        }
 }
