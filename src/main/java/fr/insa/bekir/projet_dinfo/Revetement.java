@@ -28,6 +28,35 @@ public class Revetement {
     this.prixUnitaire = prixUnitaire;
     }
     
+      public int getId() {
+        return idRevetement;
+    }
+
+
+    public String getDesignation() {
+        return designation;
+    }
+
+
+    public boolean getMur() {
+        return pourMur;
+    }
+
+
+    public boolean getSol() {
+        return pourSol;
+    }
+
+
+    public boolean getPlafond() {
+        return pourPlafond;
+    }
+
+
+    public double getPrix() {
+        return prixUnitaire;
+    }
+    
     public double prix (int id){
         double prix;
         prix= id; // a changer 
@@ -45,7 +74,7 @@ public class Revetement {
         // Recherche du revêtement
         Revetement revêtementTrouvé = null;
         for (Revetement revêtement : revêtements) {
-            if (revêtement.getNom().equals(nomRecherche)) {
+            if (revêtement.getDesignation().equals(nomRecherche)) {
                 revêtementTrouvé = revêtement;
                 break;
             }
@@ -54,7 +83,7 @@ public class Revetement {
         // Affichage des résultats
         if (revêtementTrouvé != null) {
             System.out.println("Revêtement trouvé :");
-            System.out.println("Nom : " + revêtementTrouvé.getNom());
+            System.out.println("Nom : " + revêtementTrouvé.getDesignation());
             System.out.println("Prix : " + revêtementTrouvé.getPrix());
             // ... autres informations à afficher
         } else {
