@@ -73,7 +73,7 @@ public class Pièce extends Niveau{
        }
    }
    
-   public void sauvegardeplafond() throws Exception{
+   public void sauvegardepièce() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
             writer.write("Pièce " + ";" + Pièce.getIdPiece() + ";" + Pièce.getSol() + ";" + Pièce.getPlafond() + ";" + Pièce.getListeMurs() + "\n");
