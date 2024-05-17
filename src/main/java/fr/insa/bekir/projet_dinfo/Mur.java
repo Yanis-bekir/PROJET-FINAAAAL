@@ -97,7 +97,7 @@ public class Mur {
         return montant; 
     }
     
-    public void sauvegardecoin() throws Exception{
+    public void sauvegardemur() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
             writer.write("Mur " + ";" + Mur.getIdmur() + ";" + Mur.getCoindebut() + ";" + Mur.getCoinfin() + ";" + Mur.getNbrPortes() + ";" + Mur.getNbrFenetre() + ";" + Mur.getListeRevetements() + "\n");
