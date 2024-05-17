@@ -10,11 +10,11 @@ package fr.insa.bekir.projet_dinfo;
  */
 public class Porte extends Ouverture {
 
-    public Porte(double idOuverture ,double hauteur, double largeur) {
+    public Porte(int idOuverture ,double hauteur, double largeur) {
         super(idOuverture, dimY, dimX);
     }
    
-    public double surfaceporte (){
+    public static double surfaceporte (){
        dimY = 2.1;
        dimX = 0.9;
        return dimY*dimX;
