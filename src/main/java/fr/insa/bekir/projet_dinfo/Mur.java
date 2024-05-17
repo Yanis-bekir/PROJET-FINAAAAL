@@ -4,6 +4,7 @@
  */
 package fr.insa.bekir.projet_dinfo;
 import java.util.ArrayList;
+import java.io.*;
 
 /**
  *
@@ -11,12 +12,12 @@ import java.util.ArrayList;
  */
 public class Mur { 
     
-    public int idmur;
-    public Coin coindebut;
-    public Coin coinfin;
-    public int nbrPortes;
-    public int nbrFenetre;
-    ArrayList ListeRevetements =new ArrayList<Revetement>();
+    public static int idmur;
+    public static Coin coindebut;
+    public static Coin coinfin;
+    public static int nbrPortes;
+    public static int nbrFenetre;
+    static ArrayList  ListeRevetements =new ArrayList<Revetement>();
     
     
     Mur(int id, Coin coindebut, Coin coinfin, int nbrPortes, int nbrFenetre, ArrayList idRevetement) {
@@ -26,6 +27,54 @@ public class Mur {
     this.nbrFenetre = nbrFenetre;
     this.nbrPortes = nbrPortes;
     this.ListeRevetements = idRevetement;
+    }
+
+    public static int getIdmur() {
+        return idmur;
+    }
+
+    public static void setIdmur(int idmur) {
+        Mur.idmur = idmur;
+    }
+
+    public static Coin getCoindebut() {
+        return coindebut;
+    }
+
+    public static void setCoindebut(Coin coindebut) {
+        Mur.coindebut = coindebut;
+    }
+
+    public static Coin getCoinfin() {
+        return coinfin;
+    }
+
+    public static void setCoinfin(Coin coinfin) {
+        Mur.coinfin = coinfin;
+    }
+
+    public static int getNbrPortes() {
+        return nbrPortes;
+    }
+
+    public static void setNbrPortes(int nbrPortes) {
+        Mur.nbrPortes = nbrPortes;
+    }
+
+    public static int getNbrFenetre() {
+        return nbrFenetre;
+    }
+
+    public static void setNbrFenetre(int nbrFenetre) {
+        Mur.nbrFenetre = nbrFenetre;
+    }
+
+    public static ArrayList getListeRevetements() {
+        return ListeRevetements;
+    }
+
+    public void setListeRevetements(ArrayList ListeRevetements) {
+        this.ListeRevetements = ListeRevetements;
     }
     
     public void afficher(){
@@ -47,4 +96,11 @@ public class Mur {
         double montant=mur.surface()*revetements.prix()-nbrFenetre*Fenetre.surface();
         return montant; 
     }
+    
+    public void sauvegardecoin() throws Exception{
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
+            // Écriture des revêtements dans le fichier
+            writer.write("Mur " + ";" + Mur.getIdmur() + ";" + Mur.getCoindebut() + ";" + Mur.getCoinfin() + ";" + Mur.getNbrPortes() + ";" + Mur.getNbrFenetre() + ";" + Mur.getListeRevetements() + "\n");
+            }
+        }
 }
