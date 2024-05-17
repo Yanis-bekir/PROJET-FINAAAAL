@@ -18,4 +18,9 @@ Ouverture(int id, double x, double y){
     this.dimX = x ;
     this.dimY = y ;
 }
+     
+    public double surfaceouverture (){
+        return dimY * dimX;
+    }
 }
+
