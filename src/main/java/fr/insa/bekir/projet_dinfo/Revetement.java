@@ -69,12 +69,11 @@ public class Revetement {
         // Lecture du fichier texte
         List<Revetement> revêtements = lireRevêtementsFichier("revêtements.txt");
 
-        String nomRecherche = nomfichier;
 
         // Recherche du revêtement
         Revetement revêtementTrouvé = null;
         for (Revetement revêtement : revêtements) {
-            if (revêtement.getDesignation().equals(nomRecherche)) {
+            if (revêtement.getDesignation().equals(nomfichier)) {
                 revêtementTrouvé = revêtement;
                 break;
             }
@@ -83,11 +82,10 @@ public class Revetement {
         // Affichage des résultats
         if (revêtementTrouvé != null) {
             System.out.println("Revêtement trouvé :");
-            System.out.println("Nom : " + revêtementTrouvé.getDesignation());
-            System.out.println("Prix : " + revêtementTrouvé.getPrix());
+            return revêtementTrouvé.getId();
             // ... autres informations à afficher
         } else {
-            System.out.println("Revêtement non trouvé.");
+            return -1;
         }
     }
 
