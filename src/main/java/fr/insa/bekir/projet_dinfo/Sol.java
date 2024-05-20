@@ -57,17 +57,17 @@ public class Sol {
         for (int i = 0; i<=ListeCoins.size() - 1; i++) {
             double sommex = ListeCoins.get(i).getCx();
             double sommey = ListeCoins.get(i).getCy();
-        }
         
+}        
         double Moyennex = sommex/ListeCoins.size();
         double Moyenney = sommey/ListeCoins.size();
 
         for (int i = 0; i<=ListeCoins.size() - 1; i++) {
-            double cote1 = sqrt((Maths.abs(ListeCoins.get(i).Cx-ListeCoins.get(i+1).Cx))**2+Maths.abs((ListeCoins.get(i).Cy-ListeCoins.get(i+1))**2));
-            double cote2 = sqrt((Maths.abs(ListeCoins.get(i).Cx-Moyennex))**2+Maths.abs((ListeCoins.get(i).Cy-Moyenney)**2));
-            double cote3 = = sqrt((Maths.abs(ListeCoins.get(i+1).Cx-Moyennex))**2+Maths.abs((ListeCoins.get(i+1).Cy-Moyenney)**2));
+            double cote1 = sqrt((Math.abs(ListeCoins.get(i).getCx()-ListeCoins.get(i+1).getCx()))**2+Math.abs((ListeCoins.get(i).getCy()-ListeCoins.get(i+1))**2));
+            double cote2 = sqrt((Math.abs(ListeCoins.get(i).getCx()-Moyennex))**2+Math.abs((ListeCoins.get(i).getCy-Moyenney)**2));
+            double cote3 = = sqrt((Math.abs(ListeCoins.get(i+1).getCx()-Moyennex))**2+Math.abs((ListeCoins.get(i+1).getCy()-Moyenney)**2));
             double p = (cote1+cote2+cote3)/2;
-            double surfacetriangle = sqrt(p*(p-cote1)*(p-cote2)*(p-cote3));
+            double surfacetriangle = Math.sqrt(p*(p-cote1)*(p-cote2)*(p-cote3));
             surface = surface + surfacetriangle;
     }
 
