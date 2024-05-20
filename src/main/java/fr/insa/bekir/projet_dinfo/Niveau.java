@@ -48,10 +48,10 @@ public class Niveau extends Batiment {
         return "Niveau{" + "idNiveau=" + idNiveau + ", hauteurSousPlafond=" + hauteurSousPlafond + ", ListeAppart=" + ListeAppart + '}';
     }
    
-   void surface() {
+   double surface() {
        
    }
-   void montantRevetement() {
+   double montantRevetement() {
        
    }
    
