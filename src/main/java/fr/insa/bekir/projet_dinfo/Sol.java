@@ -64,7 +64,7 @@ public class Sol {
 
         for (int i = 0; i<=ListeCoins.size() - 1; i++) {
             double cote1 = sqrt((Math.abs(ListeCoins.get(i).getCx()-ListeCoins.get(i+1).getCx()))**2+Math.abs((ListeCoins.get(i).getCy()-ListeCoins.get(i+1))**2));
-            double cote2 = sqrt((Math.abs(ListeCoins.get(i).getCx()-Moyennex))**2+Math.abs((ListeCoins.get(i).getCy-Moyenney)**2));
+            double cote2 = sqrt((Math.abs(ListeCoins.get(i).getCx()-Moyennex))**2+Math.abs((ListeCoins.get(i).getCy()-Moyenney)**2));
             double cote3 = = sqrt((Math.abs(ListeCoins.get(i+1).getCx()-Moyennex))**2+Math.abs((ListeCoins.get(i+1).getCy()-Moyenney)**2));
             double p = (cote1+cote2+cote3)/2;
             double surfacetriangle = Math.sqrt(p*(p-cote1)*(p-cote2)*(p-cote3));
@@ -82,5 +82,7 @@ public class Sol {
 
        }
 
-    public Double montantRevetement() {
+    public double montantRevetement(Sol sol, Revetement revetements, int nbrFenetre){
+    double montant=sol.surface()*revetements.getPrix()-nbrFenetre*Fenetre.surfacefenetre();
+        return montant; 
 }
