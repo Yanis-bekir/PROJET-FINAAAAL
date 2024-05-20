@@ -30,11 +30,11 @@ public class Coin {
         return "Coin{" + "idCoin=" + idCoin + ", cx=" + cx + ", cy=" + cy + '}';
     }
 
-    public static double getCx() {
+    public double getCx() {
         return cx;
     }
 
-    public static double getCy() {
+    public double getCy() {
         return cy;
     }
     public void setIdCoin(int idCoin) {
