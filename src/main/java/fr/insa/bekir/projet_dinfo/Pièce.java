@@ -23,7 +23,7 @@ public class Pièce extends Niveau{
     static ArrayList listeMurs=new ArrayList<Mur>();
     private MainPane vue;
     
-    public Controleur(MainPane v) {
+    public Pièce(MainPane v) {
         this.vue = v;
     }
     
