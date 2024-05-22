@@ -22,16 +22,14 @@ public class Pièce extends Niveau{
     static int plafond;
     static ArrayList listeMurs=new ArrayList<Mur>();
     private MainPane vue;
-    
-    public Pièce(MainPane v) {
-        this.vue = v;
-    }
-    
-   Pièce(int idNiveau, int id, int sol, int plafond, ArrayList idmurs){
+
+
+   Pièce(int idNiveau, int id, int sol, int plafond, ArrayList idmurs, MainPane v){
         this.idPiece = id ;
         this.sol = sol ; 
         this.plafond = plafond ; 
         this.listeMurs = idmurs ;
+        this.vue = v;
    }
 
     public static int getIdPiece() {
