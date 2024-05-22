@@ -46,6 +46,22 @@ public class Appartement extends Niveau {
         Appartement.listePieces = listePieces;
     }
     
+    double surfaceAppartement() {
+        double s=0 ;
+        for (int i = 0; i<=listePieces.size() - 1; i++) {
+          s=s+listePieces.get(i).surfacePièce() ;
+        }
+       return s ;
+   }
+    
+    double montantRevetement() {
+        double prix=0 ;
+       for (int i = 0; i<=listePieces.size() - 1; i++) {
+           prix=prix+listePieces.get(i).montantRevetement();
+       }
+       return prix ;
+   }
+    
     
     public void sauvegardeAppartement() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
