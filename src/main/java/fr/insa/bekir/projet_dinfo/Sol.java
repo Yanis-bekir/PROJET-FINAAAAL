@@ -51,7 +51,7 @@ public class Sol {
         Sol.ListeRevetements = ListeRevetements;
     }
    
-    public Double surface() {
+    public double surface() {
         double surface = 0;
         double sommex=0;
         double sommey=0;
