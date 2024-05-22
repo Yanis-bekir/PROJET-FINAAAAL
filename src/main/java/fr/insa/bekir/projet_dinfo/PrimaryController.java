@@ -9,4 +9,10 @@ public class PrimaryController {
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary");
     }
+    
+    private MainPane vue;
+    
+    public Controleur(MainPane v) {
+        this.vue = v;
+    }
 }
