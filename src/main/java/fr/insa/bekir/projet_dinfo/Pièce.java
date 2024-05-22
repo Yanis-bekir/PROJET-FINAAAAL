@@ -59,7 +59,7 @@ public class Pièce extends Niveau{
    
    
    void afficher() {
-       
+       System.out.println("identifiant de la pièce : " + this.idPiece+" sol : "+ this.sol + " "
    }
     
    
