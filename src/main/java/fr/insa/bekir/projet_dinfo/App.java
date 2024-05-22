@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.text.Font;
 import javafx.scene.media.AudioClip;
+import java.io.*;
 
 import java.io.IOException;
 
@@ -41,16 +42,59 @@ public class App extends Application {
         return fxmlLoader.load();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch();
-        String Sauvegarde; 
-        
+        int ON;
+        String Sauvegarde;
+        String premierMot = "";
+                
         System.out.println("Voulez vous accéder à votre sauvegarde? (1=Oui; 2=Non)");
-        Sauvegarde=Lire.i();
+        ON=Lire.i();
         
-        if (Sauvegarde = 1){
-            System.out.println("")
+        if (ON == 1){
+            System.out.println("Quels est le nom du fichier?");
+            Sauvegarde = Lire.S();
+             String fichier = Sauvegarde;
+
+            // Création d'un objet FileReader pour lire le fichier
+            FileReader fr = new FileReader(fichier);
+
+            // Création d'un objet BufferedReader pour lire le fichier ligne par ligne
+            BufferedReader br = new BufferedReader(fr);
+
+            // Lecture du fichier ligne par ligne
+            String ligne;
+            for (int i = 1; (ligne = br.readLine()) != null; i++) {
+            
+                while ((ligne = br.readLine()) != null) {
+                    premierMot = ligne.split(" ")[0];
+                }
+                
+                if (premierMot == "Coin"){
+                    
+                     String[] elements = ligne.split(";");
+                     Coin(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                
+                }
+                
+            System.out.println("Ligne " + i + " : " + ligne);
+            
+            }
+            while ((ligne = br.readLine()) != null) {
+                premierMot = ligne.split(" ")[0];
+            }
+            
+            
+            if (premierMot == "Coin"){
+             
+                
+            }
+            br.close();
+            fr.close();
+            
         }
+        
+        
     }
 
 }
