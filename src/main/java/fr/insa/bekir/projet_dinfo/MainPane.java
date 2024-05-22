@@ -1,4 +1,4 @@
-package tutorial.example.demofxrecv2;
+package  fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
 import javafx.geometry.Insets;
@@ -13,8 +13,8 @@ import javafx.scene.layout.VBox;
 
 public class MainPane extends VBox {
     
-    private ArrayList<Rec> model;
-    private Controleur controleur;
+    private ArrayList<Pièce> model;
+    private PrimaryController controleur;
     
     private Label longueur;
     private Label largeur;
