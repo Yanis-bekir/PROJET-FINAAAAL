@@ -80,8 +80,8 @@ public class Sol {
             writer.write("Sol " + ";" + Sol.getIdSol() + ";" + Sol.getListeCoins() + ";" + Sol.getListeRevetements() + "\n");
             }
         }
-    public double montantRevetement(Sol sol, Revetement revetements, int nbrFenetre){
-    double montant=sol.surface()*revetements.getPrix()-nbrFenetre*Fenetre.surfacefenetre();
+    public double montantRevetement(Sol sol, Revetement revetements){
+    double montant=sol.surface()*revetements.getPrix();
         return montant; 
 }
        }
