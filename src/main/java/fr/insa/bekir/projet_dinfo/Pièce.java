@@ -21,7 +21,11 @@ public class Pièce extends Niveau{
     static int sol;
     static int plafond;
     static ArrayList listeMurs=new ArrayList<Mur>();
+    private MainPane vue;
     
+    public Controleur(MainPane v) {
+        this.vue = v;
+    }
     
    Pièce(int idNiveau, int id, int sol, int plafond, ArrayList idmurs){
         this.idPiece = id ;
