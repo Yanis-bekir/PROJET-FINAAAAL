@@ -6,6 +6,11 @@ package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
 import java.io.*;
+import javafx.geometry.Pos;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -80,5 +85,24 @@ public class Pièce extends Niveau{
             }
         }
    
-   
+       public void dessinerRecs(){
+            for (int i=0;i<this.vue.getModel().size();i++) {
+             Text text = new Text("Rec " + (i+1));
+                StackPane stack = new StackPane();
+             Rectangle rectangle = new Rectangle();
+                rectangle.setX(this.vue.getModel().get(i).getOri_x());
+                rectangle.setY(this.vue.getModel().get(i).getOri_y());
+                rectangle.setWidth(this.vue.getModel().get(i).getLar());
+                rectangle.setHeight(this.vue.getModel().get(i).getLon());
+                rectangle.setStroke(Color.BLACK);
+                rectangle.setFill(Color.WHITE); 
+
+                stack.setAlignment(Pos.CENTER);
+                stack.getChildren().addAll(rectangle, text);
+                stack.setLayoutX(this.vue.getModel().get(i).getOri_x());
+                stack.setLayoutY(this.vue.getModel().get(i).getOri_y());
+
+                this.vue.getEspace_affichage().getChildren().addAll(stack);
+            } 
+       }
 }
