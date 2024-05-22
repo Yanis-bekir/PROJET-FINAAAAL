@@ -48,6 +48,21 @@ public class Batiment {
 }
     void dessiner{
 }
+    double surfaceBatiment() {
+        double s=0 ;
+        for (int i = 0; i<=listeNiveaux.size() - 1; i++) {
+          s=s+listeNiveaux.get(i).surfaceAppartement() ;
+        }
+       return s ;
+   }
+    
+    double montantRevetement() {
+        double prix=0 ;
+       for (int i = 0; i<=listeNiveaux.size() - 1; i++) {
+           prix=prix+listeNiveaux.get(i).montantRevetement();
+       }
+       return prix ;
+   }
     public void sauvegardebatiment() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
