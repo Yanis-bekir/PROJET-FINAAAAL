@@ -85,13 +85,13 @@ public class Pièce extends Niveau{
             }
         }
    
-       public void dessinerRecs(){
+       public void dessinerPiece(){
             for (int i=0;i<this.vue.getModel().size();i++) {
              Text text = new Text("Rec " + (i+1));
                 StackPane stack = new StackPane();
              Rectangle rectangle = new Rectangle();
-                rectangle.setX(this.vue.getModel().get(i).getOri_x());
-                rectangle.setY(this.vue.getModel().get(i).getOri_y());
+                rectangle.setX(this.vue.getModel().get(i).getCx());
+                rectangle.setY(this.vue.getModel().get(i).getCy());
                 rectangle.setWidth(this.vue.getModel().get(i).getLar());
                 rectangle.setHeight(this.vue.getModel().get(i).getLon());
                 rectangle.setStroke(Color.BLACK);
