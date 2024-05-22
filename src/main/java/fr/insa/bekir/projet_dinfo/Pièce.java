@@ -68,7 +68,7 @@ public class Pièce extends Niveau{
    
    
    void afficher() {
-       System.out.println("identifiant de la pièce : " + this.idPiece+" sol : "+ this.sol + " plafond : "+ this.plafond + " identifiant du mur : " + this.listeMurs)
+       System.out.println("identifiant de la pièce : " + this.idPiece+" sol : "+ this.sol + " plafond : "+ this.plafond + " identifiant du mur : " + this.listeMurs);
    }
     
    
@@ -103,8 +103,8 @@ public class Pièce extends Niveau{
 
                 stack.setAlignment(Pos.CENTER);
                 stack.getChildren().addAll(rectangle, text);
-                stack.setLayoutX(this.vue.getModel().get(i).getOri_x());
-                stack.setLayoutY(this.vue.getModel().get(i).getOri_y());
+                stack.setLayoutX(this.vue.getModel().get(i).getCx());
+                stack.setLayoutY(this.vue.getModel().get(i).getCy());
 
                 this.vue.getEspace_affichage().getChildren().addAll(stack);
             } 
