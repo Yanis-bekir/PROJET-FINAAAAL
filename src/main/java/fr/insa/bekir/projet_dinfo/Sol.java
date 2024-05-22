@@ -53,10 +53,11 @@ public class Sol {
    
     public Double surface() {
         double surface = 0;
-
+        double sommex=0;
+        double sommey=0;
         for (int i = 0; i<=ListeCoins.size() - 1; i++) {
-            double sommex = ListeCoins.get(i).getCx();
-            double sommey = ListeCoins.get(i).getCy();
+            sommex = sommex + ListeCoins.get(i).getCx();
+            sommey = sommey + ListeCoins.get(i).getCy();
         
 }        
         double Moyennex = sommex/ListeCoins.size();
@@ -79,10 +80,10 @@ public class Sol {
             writer.write("Sol " + ";" + Sol.getIdSol() + ";" + Sol.getListeCoins() + ";" + Sol.getListeRevetements() + "\n");
             }
         }
-
-       }
-
     public double montantRevetement(Sol sol, Revetement revetements, int nbrFenetre){
     double montant=sol.surface()*revetements.getPrix()-nbrFenetre*Fenetre.surfacefenetre();
         return montant; 
 }
+       }
+
+
