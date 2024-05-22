@@ -46,7 +46,7 @@ public class App extends Application {
         launch();
         int ON;
         String Sauvegarde;
-        String premierMot = "";
+        String Nom = "";
                 
         System.out.println("Voulez vous accéder à votre sauvegarde? (1=Oui; 2=Non)");
         ON=Lire.i();
@@ -67,10 +67,10 @@ public class App extends Application {
             for (int i = 1; (ligne = br.readLine()) != null; i++) {
             
                 while ((ligne = br.readLine()) != null) {
-                    premierMot = ligne.split(" ")[0];
+                    Nom = ligne.split(" ")[0];
                 }
                 
-                if (premierMot == "Coin"){
+                if (Nom == "Coin"){
                     
                      String[] elements = ligne.split(";");
                      Coin(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
