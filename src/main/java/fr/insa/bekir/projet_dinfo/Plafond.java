@@ -55,6 +55,29 @@ public class Plafond {
         double montant=plafond.surface()*revetements.getPrix();
         return montant; 
     }
+          public double surface() {
+        double surface = 0;
+        double sommex=0;
+        double sommey=0;
+        for (int i = 0; i<=listeCoins.size() - 1; i++) {
+            sommex = sommex + listeCoins.get(i).getCx();
+            sommey = sommey + listeCoins.get(i).getCy();
+        
+}        
+        double Moyennex = sommex/listeCoins.size();
+        double Moyenney = sommey/listeCoins.size();
+
+        for (int i = 0; i<=listeCoins.size() - 1; i++) {
+            double cote1 = sqrt((Math.abs(listeCoins.get(i).getCx()-listeCoins.get(i+1).getCx()))**2+Math.abs((listeCoins.get(i).getCy()-listeCoins.get(i+1))**2));
+            double cote2 = sqrt((Math.abs(listeCoins.get(i).getCx()-Moyennex))**2+Math.abs((listeCoins.get(i).getCy()-Moyenney)**2));
+            double cote3 = = sqrt((Math.abs(listeCoins.get(i+1).getCx()-Moyennex))**2+Math.abs((listeCoins.get(i+1).getCy()-Moyenney)**2));
+            double p = (cote1+cote2+cote3)/2;
+            double surfacetriangle = Math.sqrt(p*(p-cote1)*(p-cote2)*(p-cote3));
+            surface = surface + surfacetriangle;
+    }
+
+        return surface;
+    }
             
     public void sauvegardeplafond() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
