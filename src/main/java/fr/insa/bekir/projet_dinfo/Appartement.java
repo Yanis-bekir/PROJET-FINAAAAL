@@ -11,7 +11,7 @@ import java.io.*;
  *
  * @author ybekir01
  */
-public class Appartement extends Niveau {
+public class Appartement {
     static int idAppartement ;
     static int idNiveauAppartement ;
     static ArrayList listePieces =new ArrayList<Pièce>();
