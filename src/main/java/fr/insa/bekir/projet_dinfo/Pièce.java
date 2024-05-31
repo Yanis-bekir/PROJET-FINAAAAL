@@ -24,7 +24,7 @@ public class Pièce extends Niveau{
     private MainPane vue;
 
 
-   Pièce(int idNiveau, int id, int sol, int plafond, ArrayList idmurs, MainPane v){
+   Pièce(int idPiece, int id, int sol, int plafond, ArrayList idmurs, MainPane v){
         this.idPiece = id ;
         this.sol = sol ; 
         this.plafond = plafond ; 
