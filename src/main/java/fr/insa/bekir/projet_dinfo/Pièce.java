@@ -18,13 +18,13 @@ import javafx.scene.text.Text;
  */
 public class Pièce {
     static int idPiece;
-    static int sol;
-    static int plafond;
+    static Sol sol;
+    static Plafond plafond;
     static ArrayList listeMurs=new ArrayList<Mur>();
     private MainPane vue;
 
 
-   Pièce(int idPiece, int id, int sol, int plafond, ArrayList idmurs, MainPane v){
+   Pièce(int idPiece, int id, Sol sol, Plafond plafond, ArrayList idmurs, MainPane v){
         this.idPiece = id ;
         this.sol = sol ; 
         this.plafond = plafond ; 
@@ -40,19 +40,19 @@ public class Pièce {
         Pièce.idPiece = idPiece;
     }
 
-    public static int getSol() {
+    public static Sol getSol() {
         return sol;
     }
 
-    public static void setSol(int sol) {
+    public static void setSol(Sol sol) {
         Pièce.sol = sol;
     }
 
-    public static int getPlafond() {
+    public static Plafond getPlafond() {
         return plafond;
     }
 
-    public static void setPlafond(int plafond) {
+    public static void setPlafond(Plafond plafond) {
         Pièce.plafond = plafond;
     }
 
