@@ -19,7 +19,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        Scene sc = new Scene(new Label("coucou"));
+        Scene sc = new Scene(new MainPain());
         stage.setScene(scene);
         stage.show();
     }
