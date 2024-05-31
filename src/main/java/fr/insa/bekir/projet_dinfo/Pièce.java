@@ -16,7 +16,7 @@ import javafx.scene.text.Text;
  *
  * @author ybekir01
  */
-public class Pièce extends Niveau{
+public class Pièce {
     static int idPiece;
     static int sol;
     static int plafond;
