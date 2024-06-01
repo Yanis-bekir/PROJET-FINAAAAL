@@ -95,6 +95,7 @@ public class App extends Application {
             
         }
         if (ON==0){
+            ArrayList ListeRevetements= lireRevêtementsFichier(cataloguerevetement.txt);
             System.out.println("Quel est le nom du batiment");
             String Denomination=Lire.S();
             ArrayList Niveau= new ArrayList<Niveau>();
@@ -103,18 +104,17 @@ public class App extends Application {
             int n=0;
             int p=0;
             int q=0;
+            int id=0;
             // quand le bouton creer niveau presser
             System.out.println("Quelle est la hauteur sous-plafond de ce niveau?");
             double hsf=Lire.d();
             ArrayList Appartement= new ArrayList<Appartement>();
-            Niveau RDC=new Niveau(j,hsf,Appartement);
-            Niveau.add(RDC);
+            Niveau.add(new Niveau(j,hsf,Appartement));
             j=j+1;
             int k=0;
             //creer appartement
             ArrayList Piece= new ArrayList<Pièce>();
-            Appartement salle=new Appartement(k,j,Piece);
-            Appartement.add(salle);
+            Appartement.add(new Appartement(k,j,Piece));
             k=k+1;
             int l=0;
             //creer Piece
@@ -128,44 +128,50 @@ public class App extends Application {
             double cx=Lire.d();
             System.out.println("Donner la coordonnée en x du coin ?");
             double cy=Lire.d();
-            Coin coinm= new Coin(m,cx,cy);
-            coin.add(coinm);
+            coin.add(new Coin(m,cx,cy));
             m=m+1;
             //Fin création coin
             // creer mur
             revetements.clear();
-            int o=0;
             // Ajouter un revetement
-            System.out.println("Quel revetement voulez vous rajoutez ?");
-            String recherche= Lire.S();
-            revetements.add();
+            System.out.println("Quel est l'identifiant du revetement que vous voulez rajoutez ?");
+            id= Lire.i();
+            revetements.add(ListeRevetements.get(id));
             System.out.println("Combien de fenêtres a ce mur ?");
             int nbrfenetre=Lire.i();
             System.out.println("Combien de porte à ce mur?");
             int nbrporte=Lire.i();
             // selection des coins debut et fin avec le menu deroulant
-            Mur mur+String.valueOf(n)= new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements);
-            Mur.add(mur[n]);
-            n=n+1;n
+            
+            Mur.add(new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements));
+            Mur.get(n).sauvegardemur();
+            n=n+1;
             //fin creation mur
             // creer plafond
             revetements.clear();
-            int o=0;
-            
-            revetements.add();
-            Plafond plafond=New Plafond(p,coin,revetements);
+            System.out.println("Quel est l'identifiant du revetement que vous voulez rajoutez ?");
+            id= Lire.i();
+            revetements.add(ListeRevetements.get(id));
+            Plafond plafond=new Plafond(p,coin,revetements);
             p=p+1;
+            plafond.sauvegardeplafond();
             //fin creation plafond
-                    // creer sol
+            // creer sol
             revetements.clear();
-            int o=0;
-            
-            revetements.add();
-            Sol sol=New Sol(q,coin,revetements);
+            System.out.println("Quel est l'identifiant du revetement que vous voulez rajoutez ?");
+            id= Lire.i();
+            revetements.add(ListeRevetements.get(id));
+            System.out.println("Quel est l'identifiant du revetement que vous voulez rajoutez ?");
+            id= Lire.i();
+            revetements.add(ListeRevetements.get(id));
+            Sol sol=new Sol(q,coin,revetements);
             q=q+1;
+            sol.sauvegardesol();
             //fin creation sol
-            Pièce piece=new Pièce(l,sol,plafond,Mur,);
+            Pièce piece=new Pièce(l,sol,plafond,Mur);
+            piece.sauvegardepièce();
             Piece.add(piece);
+            
             
             
             
