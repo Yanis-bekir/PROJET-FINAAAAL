@@ -1,3 +1,23 @@
+0001;Carrelage;1;1;0;99.93
+0002;Carrelage;1;1;0;75.90
+0003;Carrelage;1;1;0;99.93
+0004;Carrelage;1;1;0;62,84
+0005;Carrelage;1;1;0;99.93
+0006;Carrelage;1;1;0;85.60
+1001;Papier peint;1;0;0;5.99
+1002;Papier peint;1;0;0;5.99
+1003;Papier peint;1;0;0;10.99
+1004;Papier peint;1;0;0;5.99
+1005;Papier peint;1;0;0;5.99
+1006;Papier peint;1;0;0;5.99
+1007;Papier peint;1;0;0;5.99
+2001;Stratifie;0;1;0;17.99
+2002;Stratifie;0;1;0;17.99
+2003;Stratifie;0;1;0;17.99
+2004;Stratifie;0;1;0;17.99
+2005;Stratifie;0;1;0;17.99
+2006;Stratifie;0;1;0;17.99
+2007;Stratifie;0;1;0;17.99
 125;Peinture;1;0;1;10.95
 23;Carrelage;1;1;0;49.75
 43;Lambris;1;1;1;50.60
