@@ -92,7 +92,7 @@ public class Mur {
        return s;
     }
     
-    public double montantRevetement (Mur mur){
+    public static double montantRevetement (Mur mur){
         for (int i=0;i<=ListeRevetements.size();i++){
         double montant=mur.surface()*ListeRevetements.get(i).getPrix()-nbrFenetre*Fenetre.surfacefenetre();
         return montant; 
