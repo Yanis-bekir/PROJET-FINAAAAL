@@ -89,7 +89,7 @@ public class Revetement {
         }
     }
 
-    public List<Revetement> lireRevêtementsFichier(String nomFichier)  {
+    public static List<Revetement> lireRevêtementsFichier(String nomFichier)  {
         List<Revetement> revêtements = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(nomFichier))) {
             String ligne;
