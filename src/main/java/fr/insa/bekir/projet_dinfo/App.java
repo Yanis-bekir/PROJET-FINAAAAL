@@ -125,8 +125,8 @@ public class App extends Application {
             fr.close();
             
         }
-        if (ON==0){
-            ArrayList ListeRevetements= lireRevêtementsFichier(cataloguerevetement.txt);
+        if (ON==2){
+            ArrayList ListeRevetements= new Arraylist lireRevêtementsFichier(cataloguerevetement.txt);
             System.out.println("Quel est le nom du batiment");
             String Denomination=Lire.S();
             ArrayList Niveau= new ArrayList<Niveau>();
@@ -136,7 +136,14 @@ public class App extends Application {
             int p=0;
             int q=0;
             int id=0;
+            int tqP=1;
+            int tqR=1;
+            int tqM=1;
+            int tqA=1;
+            int tqN=1;
+            int tqC=1;
             // quand le bouton creer niveau presser
+            while (tqN!=0){
             System.out.println("Quelle est la hauteur sous-plafond de ce niveau?");
             double hsf=Lire.d();
             ArrayList Appartement= new ArrayList<Appartement>();
@@ -144,35 +151,46 @@ public class App extends Application {
             j=j+1;
             int k=0;
             //creer appartement
+            while (tqA !=0){
             ArrayList Piece= new ArrayList<Pièce>();
             Appartement.add(new Appartement(k,j,Piece));
             k=k+1;
             int l=0;
             //creer Piece
+            while (tqP!=0){
             ArrayList coin= new ArrayList<Coin>();
             ArrayList Mur= new ArrayList<Mur>();
             int m=0;
             
             ArrayList revetements= new ArrayList<Revetement>();
             //creer coin
+            while (tqC !=0){
             System.out.println("Donner la coordonnée en x du coin ?");
             double cx=Lire.d();
             System.out.println("Donner la coordonnée en x du coin ?");
             double cy=Lire.d();
             coin.add(new Coin(m,cx,cy));
+            System.out.println("Taper 0 pour arreter de rajouter des coins");
+            tqC=Lire.i();
+            }
             m=m+1;
             //Fin création coin
             // creer mur
+            while (tqM !=0){
             revetements.clear();
             // Ajouter un revetement
+            while (tqR !=0){
             System.out.println("Quel est l'identifiant du revetement que vous voulez rajoutez ?");
             id= Lire.i();
             revetements.add(ListeRevetements.get(id));
+            System.out.println("Taper 0 pour arreter de rajouter des revetements");
+            tqR=Lire.i();
+            }
+            tqR=1;
             System.out.println("Combien de fenêtres a ce mur ?");
             int nbrfenetre=Lire.i();
             System.out.println("Combien de porte à ce mur?");
             int nbrporte=Lire.i();
-            // selection des coins debut et fin avec le menu deroulant
             System.out.println("Quel est l'identifiant du coin de debut ?");
             int idcd= Lire.i();
             Coin coindebut= (Coin) coin.get(idcd);
@@ -182,24 +200,34 @@ public class App extends Application {
             Mur.add(new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements));
             Mur.get(n).sauvegardemur();
             n=n+1;
+            tqP=1;
+            System.out.println("Taper 0 pour arreter de rajouter des murs");
+            tqM=Lire.i();
+            }
             //fin creation mur
             // creer plafond
+            while (tqR!=0){
             revetements.clear();
             System.out.println("Quel est l'identifiant du revetement que vous voulez rajoutez ?");
             id= Lire.i();
             revetements.add(ListeRevetements.get(id));
+            System.out.println("Taper 0 pour arreter de rajouter des revetements");
+            tqR=Lire.i();
+            }
             Plafond plafond=new Plafond(p,coin,revetements);
             p=p+1;
             plafond.sauvegardeplafond();
             //fin creation plafond
             // creer sol
             revetements.clear();
+            while (tqR!=0){
             System.out.println("Quel est l'identifiant du revetement que vous voulez rajoutez ?");
             id= Lire.i();
             revetements.add(ListeRevetements.get(id));
-            System.out.println("Quel est l'identifiant du revetement que vous voulez rajoutez ?");
-            id= Lire.i();
-            revetements.add(ListeRevetements.get(id));
+            System.out.println("Taper 0 pour arreter de rajouter des revetements");
+            tqR=Lire.i();
+            }
+            tqR=1;
             Sol sol=new Sol(q,coin,revetements);
             q=q+1;
             sol.sauvegardesol();
@@ -207,6 +235,18 @@ public class App extends Application {
             Pièce piece=new Pièce(l,sol,plafond,Mur);
             piece.sauvegardepièce();
             Piece.add(piece);
+            System.out.println("Taper 0 pour arreter de rajouter des pieces");
+            tqP=Lire.i();
+            }
+            tqP=1;
+            System.out.println("Taper 0 pour arreter de rajouter des Appartements");
+            tqA=Lire.i();
+            }
+            tqA=1;
+            System.out.println("Taper 0 pour arreter de rajouter des niveau et finir le batiment");
+            tqN=Lire.i();
+            }
+            
             
             
             
