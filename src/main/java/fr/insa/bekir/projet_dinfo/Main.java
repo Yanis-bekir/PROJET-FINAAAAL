@@ -4,34 +4,14 @@
  */
 package fr.insa.bekir.projet_dinfo;
 
+import static fr.insa.bekir.projet_dinfo.Revetement.lireRevêtementsFichier;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import javafx.application.Application;
-import static javafx.application.Application.launch;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import java.util.ArrayList;
-import java.io.*;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.geometry.Pos;
-import javafx.scene.control.Label;
-import javafx.scene.control.Button;
-import javafx.scene.text.Font;
-import javafx.scene.media.AudioClip;
-import java.io.*;
 
-import java.io.IOException;
+
+
 
 
 /**
@@ -128,7 +108,8 @@ public class Main {
             
         }
         if (ON==2){
-            ArrayList ListeRevetements= new Arraylist lireRevêtementsFichier("cataloguerevetement.txt");
+            ArrayList ListeRevetements = new ArrayList<Revetement>();
+            ListeRevetements = (ArrayList) lireRevêtementsFichier("cataloguerevetement.txt");
             System.out.println("Quel est le nom du batiment");
             String Denomination=Lire.S();
             ArrayList Niveau= new ArrayList<Niveau>();
