@@ -104,7 +104,7 @@ ArrayList B=new ArrayList<Batiment>();
                 
                 else if (Nom == "Batiment"){
                     String[] elements = ligne.split(";");
-                    B.addBatiment(Integer.parseInt(elements[1]),Integer.parseInt(elements[2])));
+                    B.add(Batiment(Integer.parseInt(elements[1]),Integer.parseInt(elements[2])));
                     
                 }
                 
