@@ -173,7 +173,12 @@ public class App extends Application {
             System.out.println("Combien de porte à ce mur?");
             int nbrporte=Lire.i();
             // selection des coins debut et fin avec le menu deroulant
-            
+            System.out.println("Quel est l'identifiant du coin de debut ?");
+            int idcd= Lire.i();
+            Coin coindebut= coin.get(idcd);
+            System.out.println("Quel est l'identifiant du coin de debut ?");
+            int idcf= Lire.i();
+            Coin coinfin= coin.get(idcf);
             Mur.add(new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements));
             Mur.get(n).sauvegardemur();
             n=n+1;
