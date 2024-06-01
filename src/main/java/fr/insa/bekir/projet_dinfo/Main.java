@@ -248,6 +248,13 @@ public class Main {
             System.out.println("Taper 0 pour arreter de rajouter des niveau et finir le batiment");
             tqN=Lire.i();
             }
+            Piece.setListeMur(Mur);
+            Piece.setMur(plafond);
+            Piece.setSol(sol);
+            Appartement.setListePieces(Piece);
+            Niveau.setListeAppart(Appartement);
+            Batiment.setListeNiveaux(Niveau);
+            Batiment.montantRevetement();
             
             
             
