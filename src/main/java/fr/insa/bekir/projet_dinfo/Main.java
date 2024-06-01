@@ -12,12 +12,6 @@ import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-/**
- *
- * @author yanis
- */
-public class Main {package fr.insa.bekir.projet_dinfo;
 import java.util.ArrayList;
 import java.io.*;
 import javafx.application.Application;
@@ -39,31 +33,20 @@ import java.io.*;
 
 import java.io.IOException;
 
+
+/**
+ *
+ * @author yanis
+ */
+public class Main {
+
 /**
  * JavaFX App
  */
-public class App extends Application {
 
-    private static Scene scene;
-
-    @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
-
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    }
 
     public static void main(String[] args) throws IOException {
-        launch();
+       
         int ON;
         String Sauvegarde;
         String Nom = "";
@@ -145,7 +128,7 @@ public class App extends Application {
             
         }
         if (ON==2){
-            ArrayList ListeRevetements= new Arraylist lireRevêtementsFichier(cataloguerevetement.txt);
+            ArrayList ListeRevetements= new Arraylist lireRevêtementsFichier("cataloguerevetement.txt");
             System.out.println("Quel est le nom du batiment");
             String Denomination=Lire.S();
             ArrayList Niveau= new ArrayList<Niveau>();
@@ -277,4 +260,4 @@ public class App extends Application {
 
 }
     
-}
+
