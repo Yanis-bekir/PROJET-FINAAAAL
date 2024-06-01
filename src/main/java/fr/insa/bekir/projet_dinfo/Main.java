@@ -37,7 +37,7 @@ public class Main {
         if (ON == 1){
             ArrayList C=new ArrayList<Coin>();
 ArrayList M=new ArrayList<Mur>();
-ArrayList P=new ArrayList<Plafond>();
+ArrayList P=new ArrayList<Plafond>(); 
 ArrayList S=new ArrayList<Sol>();
 ArrayList Pi=new ArrayList<Pièce>();
 ArrayList A=new ArrayList<Appartement>();
