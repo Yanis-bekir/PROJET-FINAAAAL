@@ -35,6 +35,15 @@ public class Main {
         ON=Lire.i();
         
         if (ON == 1){
+            ArrayList C=new ArrayList<Coin>();
+ArrayList M=new ArrayList<Mur>();
+ArrayList P=new ArrayList<Plafond>();
+ArrayList S=new ArrayList<Sol>();
+ArrayList Pi=new ArrayList<Pièce>();
+ArrayList A=new ArrayList<Appartement>();
+ArrayList N=new ArrayList<Niveau>();
+ArrayList B=new ArrayList<Batiment>();
+
             System.out.println("Quels est le nom du fichier?");
             Sauvegarde = Lire.S();
              String fichier = Sauvegarde;
@@ -56,45 +65,46 @@ public class Main {
                 if (Nom == "Coin"){
                     
                      String[] elements = ligne.split(";");
-                     Coin(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                     C.add(Coin(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3])));
                 
                 }
                 
                 else if (Nom == "Mur"){
                     String[] elements = ligne.split(";");
-                    Mur(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]), Integer.parseInt(elements[4]), Integer.parseInt(elements[5]));
+                    M.add(Mur(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]), Integer.parseInt(elements[4]), Integer.parseInt(elements[5])));
                 }
                 
                 else if (Nom == "Sol"){
                     String[] elements = ligne.split(";");
-                    Sol(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                    S.add(Sol(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3])));
                 }
                 
                 else if (Nom == "Plafond"){
                     String[] elements = ligne.split(";");
-                    Plafond(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                    P.add(Plafond(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3])));
                     
                 }
                 
                 else if (Nom == "Piece"){
                     String[] elements = ligne.split(";");
-                    Piece(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]), Integer.parseInt(elements[4]), Integer.parseInt(elements[5]));
+                    Pi.add(Piece(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]), Integer.parseInt(elements[4]), Integer.parseInt(elements[5])));
                 }
                 
                 else if (Nom == "Appartement"){
                     String[] elements = ligne.split(";");
-                    Appartement(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                    A.add(Appartement(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3])));
+                    
                 }
                 
                 else if (Nom == "Niveau"){
                     String[] elements = ligne.split(";");
-                    Niveau(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                    N.add(Niveau(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3])));
                     
                 }
                 
                 else if (Nom == "Batiment"){
                     String[] elements = ligne.split(";");
-                    Batiment(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]));
+                    B.addBatiment(Integer.parseInt(elements[1]),Integer.parseInt(elements[2])));
                     
                 }
                 
