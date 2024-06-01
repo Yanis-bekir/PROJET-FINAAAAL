@@ -89,7 +89,7 @@ public class Revetement {
         }
     }
 
-    private static List<Revetement> lireRevêtementsFichier(String nomFichier) {
+    public static List<Revetement> lireRevêtementsFichier(String nomFichier)  {
         List<Revetement> revêtements = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(nomFichier))) {
             String ligne;
@@ -106,7 +106,6 @@ public class Revetement {
                 revêtements.add(revêtement);
             }
         } catch (IOException e) {
-            e.printStackTrace();
         }
         return revêtements;
     }
