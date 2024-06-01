@@ -3,7 +3,7 @@ package fr.insa.bekir.projet_dinfo;
 import java.util.ArrayList;
 import java.io.*;
 
-public class Niveau extends Batiment {
+public class Niveau {
    static int idNiveau;
    static double hauteurSousPlafond ;
    static ArrayList ListeAppart=new ArrayList<Appartement>(); ;

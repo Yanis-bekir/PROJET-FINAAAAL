@@ -16,16 +16,16 @@ import javafx.scene.text.Text;
  *
  * @author ybekir01
  */
-public class Pièce extends Niveau{
+public class Pièce {
     static int idPiece;
-    static int sol;
-    static int plafond;
+    static Sol sol;
+    static Plafond plafond;
     static ArrayList listeMurs=new ArrayList<Mur>();
     private MainPane vue;
 
 
-   Pièce(int idPiece, int id, int sol, int plafond, ArrayList idmurs, MainPane v){
-        this.idPiece = id ;
+   Pièce(int idPiece,Sol sol, Plafond plafond, ArrayList idmurs, MainPane v){
+        this.idPiece = idPiece ;
         this.sol = sol ; 
         this.plafond = plafond ; 
         this.listeMurs = idmurs ;
@@ -40,19 +40,19 @@ public class Pièce extends Niveau{
         Pièce.idPiece = idPiece;
     }
 
-    public static int getSol() {
+    public static Sol getSol() {
         return sol;
     }
 
-    public static void setSol(int sol) {
+    public static void setSol(Sol sol) {
         Pièce.sol = sol;
     }
 
-    public static int getPlafond() {
+    public static Plafond getPlafond() {
         return plafond;
     }
 
-    public static void setPlafond(int plafond) {
+    public static void setPlafond(Plafond plafond) {
         Pièce.plafond = plafond;
     }
 
@@ -74,7 +74,7 @@ public class Pièce extends Niveau{
        return sol.surface();
    }
    double montantRevetement(){
-       double prix=sol.montantRevetement(sol)+plafond.montantRevetement(plafond);
+       double prix=sol.montantRevetement()+plafond.montantRevetement();
        for (int i = 0; i<=listeMurs.size() - 1; i++) {
            prix=prix+listeMurs.get(i).montantRevetement(listeMurs.get(i));
        }

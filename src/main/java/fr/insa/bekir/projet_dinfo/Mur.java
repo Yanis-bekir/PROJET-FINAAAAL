@@ -88,15 +88,16 @@ public class Mur {
     }
     
     public double surface (){
-       double s=Math.sqrt(Math.pow(coinfin.getCx()-coindebut.getCx(),2)+Math.pow(coinfin.getCy()-coindebut.getCy(),2));
+       double s=Math.sqrt(Math.pow(coinfin.getCx()-coindebut.getCx(),2)+Math.pow(coinfin.getCy()-coindebut.getCy(),2))*hsp;
        return s;
     }
     
-    public double montantRevetement (Mur mur, Revetement revetements){
-        double montant=mur.surface()*revetements.getPrix()-nbrFenetre*Fenetre.surfacefenetre();
+    public double montantRevetement (Mur mur){
+        for (int i=0;i<=ListeRevetements.size();i++){
+        double montant=mur.surface()*ListeRevetements.get(i).getPrix()-nbrFenetre*Fenetre.surfacefenetre();
         return montant; 
     }
-    
+    }
     public void sauvegardemur() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier

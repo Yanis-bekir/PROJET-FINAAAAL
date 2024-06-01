@@ -21,6 +21,6 @@ public class Circulation extends Niveau {
         this.idCirculation = id ;
         this.sol = sol ; 
         this.plafond = plafond ; 
-        this.listMurs = idmurs ;
+        this.listeMurs = idmurs ;
     }
 }
