@@ -78,18 +78,49 @@ public class App extends Application {
                 
                 }
                 
+                else if (Nom == "Mur"){
+                    String[] elements = ligne.split(";");
+                    Mur(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]), Integer.parseInt(elements[4]), Integer.parseInt(elements[5]));
+                }
+                
+                else if (Nom == "Sol"){
+                    String[] elements = ligne.split(";");
+                    Sol(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                }
+                
+                else if (Nom == "Plafond"){
+                    String[] elements = ligne.split(";");
+                    Plafond(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                    
+                }
+                
+                else if (Nom == "Piece"){
+                    String[] elements = ligne.split(";");
+                    Piece(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]), Integer.parseInt(elements[4]), Integer.parseInt(elements[5]));
+                }
+                
+                else if (Nom == "Appartement"){
+                    String[] elements = ligne.split(";");
+                    Appartement(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                }
+                
+                else if (Nom == "Niveau"){
+                    String[] elements = ligne.split(";");
+                    Niveau(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
+                    
+                }
+                
+                else if (Nom == "Batiment"){
+                    String[] elements = ligne.split(";");
+                    Batiment(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]));
+                    
+                }
+                
+                
             System.out.println("Ligne " + i + " : " + ligne);
             
             }
-            while ((ligne = br.readLine()) != null) {
-                premierMot = ligne.split(" ")[0];
-            }
-            
-            
-            if (premierMot == "Coin"){
-             
-                
-            }
+    
             br.close();
             fr.close();
             
