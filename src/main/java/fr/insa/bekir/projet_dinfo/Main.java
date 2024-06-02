@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author yanis
  */
-public class Main {
+public class Main  {
 
 /**
  * JavaFX App
