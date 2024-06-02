@@ -164,7 +164,7 @@ List<Batiment> B = new ArrayList<>();
             while (tqC !=0){
             System.out.println("Donner la coordonnée en x du coin ?");
             double cx=Lire.d();
-            System.out.println("Donner la coordonnée en x du coin ?");
+            System.out.println("Donner la coordonnée en y du coin ?");
             double cy=Lire.d();
             coin.add(new Coin(m,cx,cy));
             System.out.println("Taper 0 pour arreter de rajouter des coins");
