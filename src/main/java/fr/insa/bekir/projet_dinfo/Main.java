@@ -257,9 +257,9 @@ List<Batiment> B = new ArrayList<>();
             tqN=Lire.i();
             }
             Niv.get(j).setListeAppart(Appartement);
-            Batiment.setListeNiveaux(Niv);
-            Niveau.get(j).sauvegardeNiveau();
-            Batiment.montantRevetement();
+            batiment.setListeNiveauxs(Niv);
+            Niv.get(j).sauvegardeNiveau();
+            batiment.montantRevetement();
             
             
             
