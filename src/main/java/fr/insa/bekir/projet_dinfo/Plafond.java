@@ -65,9 +65,11 @@ public class Plafond {
         return "Plafond{" + "idPlafond=" + idPlafond + ", listeCoins=" + listeCoins + ", listeRevetements=" + listeRevetements + '}';
     }
       public double montantRevetement (Plafond plafond){
+          double montant = 0 ;
           for (int i=0;i<=listeRevetements.size();i++){
+              montant = montant + listeRevetements.get(i).getPrix()*plafond.surface();
     }
-          return listeRevetements.get(i).getPrix()*plafond.surface();
+          return montant;
       }
       
         public double surface(){
