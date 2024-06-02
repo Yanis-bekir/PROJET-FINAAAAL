@@ -24,7 +24,7 @@ public class Pièce {
     private MainPane vue;
 
 
-   Pièce(int idPiece,Sol sol, Plafond plafond, ArrayList idmurs){
+   Pièce(int idPiece,Sol sol, Plafond plafond, ArrayList<Mur> idmurs){
         this.idPiece = idPiece ;
         this.sol = sol ; 
         this.plafond = plafond ; 
