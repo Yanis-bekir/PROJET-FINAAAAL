@@ -53,7 +53,7 @@ public class Batiment {
     double surfaceBatiment() {
         double s=0 ;
         for (int i = 0; i<=listeNiveaux.size() - 1; i++) {
-          s=s+listeNiveaux.get(i).surfaceAppartement() ;
+          s=s+listeNiveaux.get(i).surfaceNiveau() ;
         }
        return s ;
    }

@@ -4,7 +4,6 @@
  */
 package fr.insa.bekir.projet_dinfo;
 
-import com.mycompany.mavenproject5.MainPane;
 import java.util.ArrayList;
 import java.io.*;
 import java.util.List;
@@ -24,7 +23,6 @@ public class Pièce {
     static Plafond plafond;
     List<Mur> listeMurs = new ArrayList<>();
     static List<Mur> listeMurss = new ArrayList<>();
-    private MainPane vue;
 
 
    Pièce(int idPiece,Sol sol, Plafond plafond, ArrayList<Mur> idmurs){
