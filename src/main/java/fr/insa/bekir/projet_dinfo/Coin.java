@@ -11,16 +11,16 @@ import java.io.*;
 public class Coin {
     //declaration des attributs de la classe Coin
     static int idCoin;
-    static double cx;
-    static double cy;
-    
+    double cx;
+    double cy;
+   
     // Declaration du constructeur
     Coin(int id, double x,double y){
         this.idCoin=id;
         this.cx=x;
         this.cy=y;
     }
-    
+   
     void afficher(){
         System.out.println("identifiant du coin : " + this.idCoin+" Abcisse : "+ this.cx+" Ordonnée : "+ this.cy);
     }
@@ -30,11 +30,11 @@ public class Coin {
         return "Coin{" + "idCoin=" + idCoin + ", cx=" + cx + ", cy=" + cy + '}';
     }
 
-    public static double getCx() {
+    public double getCx() {
         return cx;
     }
 
-    public static double getCy() {
+    public double getCy() {
         return cy;
     }
     public void setIdCoin(int idCoin) {
@@ -44,21 +44,20 @@ public class Coin {
     public static double getIdCoin() {
         return idCoin;
     }
-    
-    public void setcx(double cx) {
+   
+    public void setcdoublecx() {
         this.cx = cx;
     }
 
     public void setcy(double cy) {
         this.cy = cy;
     }
-    
+   
     public void sauvegardecoin() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Coin " + ";" + Coin.getIdCoin() + ";" + Coin.getCx() + ";" + Coin.getCy() + "\n");
+            writer.write("Coin " + ";" + Coin.getIdCoin() + ";" + Coin.getC) + ";" + Coin.getCy() + "\n");
             }
-        } 
+        }
     }
-  
-
+ 
