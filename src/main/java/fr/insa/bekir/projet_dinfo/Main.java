@@ -192,7 +192,7 @@ List<Batiment> B = new ArrayList<>();
             System.out.println("Quel est l'identifiant du coin de debut ?");
             int idcf= Lire.i();
             Coin coinfin= (Coin) coin.get(idcf);
-            Mur.add(new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements<Revetement>,Niveau.get(j)));
+            Mur.add(new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements,Niv.get(j)));
             Mur.get(n).sauvegardemur();
             n=n+1;
 
@@ -245,7 +245,7 @@ List<Batiment> B = new ArrayList<>();
             System.out.println("Taper 0 pour arreter de rajouter des pieces");
             tqP=Lire.i();
             }
-            Appartement.setListePieces();
+            Appartement.setListePieces(Piece);
             tqP=1;
             System.out.println("Taper 0 pour arreter de rajouter des Appartements");
             tqA=Lire.i();
@@ -256,13 +256,9 @@ List<Batiment> B = new ArrayList<>();
             System.out.println("Taper 0 pour arreter de rajouter des niveau et finir le batiment");
             tqN=Lire.i();
             }
-            Niveau.sauvegardeNiveau();
-            Piece.setListeMur(Mur);
-            Piece.setMur(plafond);
-            Piece.setSol(sol);
-            Appartement.setListePieces(Piece);
             Niveau.setListeAppart(Appartement);
-            Batiment.setListeNiveaux(Niveau);
+            Batiment.setListeNiveaux(Niv);
+            Niveau.sauvegardeNiveau();
             Batiment.montantRevetement();
             
             
