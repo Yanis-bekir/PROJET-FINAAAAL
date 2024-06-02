@@ -123,7 +123,7 @@ List<Batiment> B = new ArrayList<>();
             
         }*/
         if (ON==2){
-            List<Revetement> ListeRevetements = (ArrayList) lireRevêtementsFichier("catalogue revetement .txt");
+            List<Revetement> ListeRevetements = (ArrayList) lireRevêtementsFichier("cataloguerevetement.txt");
             System.out.println("Quel est le nom du batiment");
             String Denomination=Lire.S();
             List<Niveau> Niv = new ArrayList<>();
