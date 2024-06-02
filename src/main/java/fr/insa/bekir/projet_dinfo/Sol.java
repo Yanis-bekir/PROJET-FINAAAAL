@@ -3,20 +3,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package fr.insa.bekir.projet_dinfo;
-
 import java.util.ArrayList;
 import java.io.*;
+import java.lang.Math;
+import java.util.List;
 
 public class Sol {
     //declaration des attributs de la classe Coin
     static int idSol;
-    static ArrayList ListeCoins = new ArrayList<Coin>();
-    static ArrayList ListeRevetements =new ArrayList<Revetement>();
+  
+    List<Coin> ListeCoins = new ArrayList<>();
+    List<Revetement> ListeRevetements= new ArrayList<>();
+    static List<Coin> ListeCoinss = new ArrayList<>();
+    static List<Revetement> ListeRevetementss= new ArrayList<>();
+    
 
     Sol(int id, ArrayList<Coin> Coins, ArrayList<Revetement> idRevetements){
     this.idSol=id;
     this.ListeCoins=Coins;
     this.ListeRevetements=idRevetements;
+    this.ListeCoinss = Coins;
+    this.ListeRevetementss = idRevetements;
     }
     public String afficher() {
         return "L'identifiant du sol est "+ idSol + ", la liste des coins est " + ListeCoins + "et la liste des revetements est " + ListeRevetements  ;
@@ -35,20 +42,28 @@ public class Sol {
         Sol.idSol = idSol;
     }
 
-    public static ArrayList getListeCoins() {
+    public static List<Coin> getListeCoinss() {
+        return ListeCoinss;
+    }
+    
+    public List<Coin> getListeCoins() {
         return ListeCoins;
     }
 
-    public static void setListeCoins(ArrayList ListeCoins) {
-        Sol.ListeCoins = ListeCoins;
+    public static void setListeCoinss(ArrayList ListeCoins) {
+        Sol.ListeCoinss = ListeCoins;
     }
 
-    public static ArrayList getListeRevetements() {
+    public static List<Revetement> getListeRevetementss() {
+        return ListeRevetementss;
+    }
+    
+    public  List<Revetement> getListeRevetements() {
         return ListeRevetements;
     }
 
     public static void setListeRevetements(ArrayList ListeRevetements) {
-        Sol.ListeRevetements = ListeRevetements;
+        Sol.ListeRevetementss = ListeRevetements;
     }
    
     public double surface() {
@@ -77,7 +92,7 @@ public class Sol {
         public void sauvegardesol() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Sol " + ";" + Sol.getIdSol() + ";" + Sol.getListeCoins() + ";" + Sol.getListeRevetements() + "\n");
+            writer.write("Sol " + ";" + Sol.getIdSol() + ";" + Sol.getListeCoinss() + ";" + Sol.getListeRevetementss() + "\n");
             }
         }
     public double montantRevetement(Sol sol){
