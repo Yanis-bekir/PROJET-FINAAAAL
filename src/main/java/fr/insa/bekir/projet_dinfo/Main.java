@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -34,15 +35,15 @@ public class Main {
         System.out.println("Voulez vous accéder à votre sauvegarde? (1=Oui; 2=Non)");
         ON=Lire.i();
         
-        if (ON == 1){
+      /*  if (ON == 1){
             ArrayList C=new ArrayList<Coin>();
-ArrayList M=new ArrayList<Mur>();
-ArrayList P=new ArrayList<Plafond>(); 
-ArrayList S=new ArrayList<Sol>();
-ArrayList Pi=new ArrayList<Pièce>();
-ArrayList A=new ArrayList<Appartement>();
-ArrayList N=new ArrayList<Niveau>();
-ArrayList B=new ArrayList<Batiment>();
+List<Mur> M = new ArrayList<>();
+List<Plafond> P = new ArrayList<>(); 
+List<Sol> S = new ArrayList<>();
+List<Pièce> Pi = new ArrayList<>();
+List<Appartement> A = new ArrayList<>();
+List<Niveau> N = new ArrayList<>();
+List<Batiment> B = new ArrayList<>();
 
             System.out.println("Quels est le nom du fichier?");
             Sauvegarde = Lire.S();
@@ -115,15 +116,14 @@ ArrayList B=new ArrayList<Batiment>();
     
             br.close();
             fr.close();
-            
+            */
         }
         if (ON==2){
-            ArrayList ListeRevetements = new ArrayList<Revetement>();
-            ListeRevetements = (ArrayList) lireRevêtementsFichier("cataloguerevetement.txt");
+            List<Revetement> ListeRevetements = (ArrayList) lireRevêtementsFichier("cataloguerevetement.txt");
             System.out.println("Quel est le nom du batiment");
             String Denomination=Lire.S();
-            ArrayList Niveau= new ArrayList<Niveau>();
-            Batiment batiment= new Batiment(Denomination,Niveau);
+            List<Niveau> Niv = new ArrayList<>();
+            Batiment batiment= new Batiment(Denomination,Niv);
             int j=0;
             int n=0;
             int p=0;
@@ -139,23 +139,23 @@ ArrayList B=new ArrayList<Batiment>();
             while (tqN!=0){
             System.out.println("Quelle est la hauteur sous-plafond de ce niveau?");
             double hsf=Lire.d();
-            ArrayList Appartement= new ArrayList<Appartement>();
-            Niveau.add(new Niveau(j,hsf,Appartement));
+            List<Appartement> Appartement = new ArrayList<>();
+            Niv.add(new Niveau(j,hsf,Appartement));
             j=j+1;
             int k=0;
             //creer appartement
             while (tqA !=0){
-            ArrayList Piece= new ArrayList<Pièce>();
+            List<Pièce> Piece = new ArrayList<>();
             Appartement.add(new Appartement(k,j,Piece));
             k=k+1;
             int l=0;
             //creer Piece 
             while (tqP!=0){
-            ArrayList coin= new ArrayList<Coin>();
-            ArrayList Mur= new ArrayList<Mur>();
+            List<Coin> coin = new ArrayList<>();
+            List<Mur> Mur = new ArrayList<>();
             int m=0;
             
-            ArrayList revetements= new ArrayList<Revetement>();
+            List<Revetement> revetements = new ArrayList<>();
             //creer coin
             while (tqC !=0){
             System.out.println("Donner la coordonnée en x du coin ?");
@@ -226,9 +226,8 @@ ArrayList B=new ArrayList<Batiment>();
             sol.sauvegardesol();
             //fin creation sol
             Pièce piece=new Pièce(l,sol,plafond,Mur);
-            piece.sauvegardepièce();
             Piece.add(piece);
-            Piece.sauvegardepiece();
+            piece.sauvegardepièce();
             System.out.println("Taper 0 pour arreter de rajouter des pieces");
             tqP=Lire.i();
             }
