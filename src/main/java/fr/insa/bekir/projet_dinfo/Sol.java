@@ -79,9 +79,9 @@ public class Sol {
         double Moyenney = sommey/ListeCoins.size();
 
         for (int i = 0; i<=ListeCoins.size() - 1; i++) {
-            double cote1 = sqrt((Math.abs(ListeCoins.get(i).getCx()-ListeCoins.get(i+1).getCx()))**2+Math.abs((ListeCoins.get(i).getCy()-ListeCoins.get(i+1))**2));
-            double cote2 = sqrt((Math.abs(ListeCoins.get(i).getCx()-Moyennex))**2+Math.abs((ListeCoins.get(i).getCy()-Moyenney)**2));
-            double cote3 = = sqrt((Math.abs(ListeCoins.get(i+1).getCx()-Moyennex))**2+Math.abs((ListeCoins.get(i+1).getCy()-Moyenney)**2));
+            double cote1 = Math.sqrt(Math.pow(Math.abs(ListeCoins.get(i).getCx()-ListeCoins.get(i+1).getCx()),2)+Math.pow(Math.abs(ListeCoins.get(i).getCy()-ListeCoins.get(i+1).getCy()),2));
+            double cote2 = Math.sqrt(Math.pow(Math.abs(ListeCoins.get(i).getCx()-Moyennex),2)+Math.pow(Math.abs((ListeCoins.get(i).getCy()-Moyenney)),2));
+            double cote3 = Math.sqrt(Math.pow(Math.abs(ListeCoins.get(i+1).getCx()-Moyennex),2)+Math.pow(Math.abs((ListeCoins.get(i+1).getCy()-Moyenney)),2));
             double p = (cote1+cote2+cote3)/2;
             double surfacetriangle = Math.sqrt(p*(p-cote1)*(p-cote2)*(p-cote3));
             surface = surface + surfacetriangle;
