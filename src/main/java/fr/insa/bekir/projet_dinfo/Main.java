@@ -4,7 +4,7 @@
  */
 package fr.insa.bekir.projet_dinfo;
 
-import static fr.insa.bekir.projet_dinfo.Revetement.lireRevêtementsFichier;
+import static fr.insa.bekir.projet_dinfo.Revetement.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -190,7 +190,7 @@ ArrayList B=new ArrayList<Batiment>();
             System.out.println("Quel est l'identifiant du coin de debut ?");
             int idcf= Lire.i();
             Coin coinfin= (Coin) coin.get(idcf);
-            Mur.add(new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements));
+            Mur.add(new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements<Revetement>,Niveau.get(j)));
             Mur.get(n).sauvegardemur();
             n=n+1;
 
