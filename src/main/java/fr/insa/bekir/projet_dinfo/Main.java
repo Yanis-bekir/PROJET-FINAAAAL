@@ -228,17 +228,22 @@ ArrayList B=new ArrayList<Batiment>();
             Pièce piece=new Pièce(l,sol,plafond,Mur);
             piece.sauvegardepièce();
             Piece.add(piece);
+            Piece.sauvegardepiece();
             System.out.println("Taper 0 pour arreter de rajouter des pieces");
             tqP=Lire.i();
             }
+            Appartement.setListePieces();
             tqP=1;
             System.out.println("Taper 0 pour arreter de rajouter des Appartements");
             tqA=Lire.i();
+            
             }
+            Appartement.sauvegardeAppartement();
             tqA=1;
             System.out.println("Taper 0 pour arreter de rajouter des niveau et finir le batiment");
             tqN=Lire.i();
             }
+            Niveau.sauvegardeNiveau();
             Piece.setListeMur(Mur);
             Piece.setMur(plafond);
             Piece.setSol(sol);
