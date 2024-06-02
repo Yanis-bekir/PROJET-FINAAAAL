@@ -4,8 +4,10 @@
  */
 package fr.insa.bekir.projet_dinfo;
 
+import com.mycompany.mavenproject5.MainPane;
 import java.util.ArrayList;
 import java.io.*;
+import java.util.List;
 import javafx.geometry.Pos;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -20,7 +22,8 @@ public class Pièce {
     static int idPiece;
     static Sol sol;
     static Plafond plafond;
-    static ArrayList listeMurs=new ArrayList<Mur>();
+    List<Mur> listeMurs = new ArrayList<>();
+    static List<Mur> listeMurss = new ArrayList<>();
     private MainPane vue;
 
 
@@ -29,7 +32,7 @@ public class Pièce {
         this.sol = sol ; 
         this.plafond = plafond ; 
         this.listeMurs = idmurs ;
-        this.vue = v;
+        this.listeMurss = idmurs;
    }
 
     public static int getIdPiece() {
@@ -56,12 +59,16 @@ public class Pièce {
         Pièce.plafond = plafond;
     }
 
-    public static ArrayList getListeMurs() {
+    public static List<Mur> getListeMurss() {
+        return listeMurss;
+    }
+    
+    public  List<Mur> getListeMurs() {
         return listeMurs;
     }
 
-    public static void setListeMurs(ArrayList listeMurs) {
-        Pièce.listeMurs = listeMurs;
+    public static void setListeMurss(ArrayList listeMurs) {
+        Pièce.listeMurss = listeMurs;
     }
    
    
@@ -73,38 +80,21 @@ public class Pièce {
    double surfacePièce() {
        return sol.surface();
    }
+   
    double montantRevetement(){
        double prix=sol.montantRevetement(sol)+plafond.montantRevetement(plafond);
        for (int i = 0; i<=listeMurs.size() - 1; i++) {
            prix=prix+listeMurs.get(i).montantRevetement(listeMurs.get(i));
        }
+       return prix;
    }
    
    public void sauvegardepièce() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Pièce " + ";" + Pièce.getIdPiece() + ";" + Pièce.getSol() + ";" + Pièce.getPlafond() + ";" + Pièce.getListeMurs() + "\n");
+            writer.write("Pièce " + ";" + Pièce.getIdPiece() + ";" + Pièce.getSol() + ";" + Pièce.getPlafond() + ";" + Pièce.getListeMurss() + "\n");
             }
         }
    
-       public void dessinerPiece(){
-            for (int i=0;i<this.vue.getModel().size();i++) {
-             Text text = new Text("Rec " + (i+1));
-                StackPane stack = new StackPane();
-             Rectangle rectangle = new Rectangle();
-                rectangle.setX(this.vue.getModel().get(i).getCx());
-                rectangle.setY(this.vue.getModel().get(i).getCy());
-                rectangle.setWidth(this.vue.getModel().get(i).getLar());
-                rectangle.setHeight(this.vue.getModel().get(i).getLon());
-                rectangle.setStroke(Color.BLACK);
-                rectangle.setFill(Color.WHITE); 
-
-                stack.setAlignment(Pos.CENTER);
-                stack.getChildren().addAll(rectangle, text);
-                stack.setLayoutX(this.vue.getModel().get(i).getCx());
-                stack.setLayoutY(this.vue.getModel().get(i).getCy());
-
-                this.vue.getEspace_affichage().getChildren().addAll(stack);
-            } 
-       }
+       
 }
