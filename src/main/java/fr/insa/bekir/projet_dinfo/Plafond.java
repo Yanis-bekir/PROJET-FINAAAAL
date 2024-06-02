@@ -20,7 +20,7 @@ public class Plafond {
     static List<Coin> listeCoinss = new ArrayList<>();
     static List<Revetement> listeRevetementss = new ArrayList<>();
    
-    Plafond(int id, ArrayList<Coin> listeCoins, ArrayList<Revetement> idRevetement){
+    Plafond(int id, List<Coin> listeCoins, List<Revetement> idRevetement){
         this.idPlafond= id;
         this.listeCoins= listeCoins;
         this.listeRevetements = idRevetement;
