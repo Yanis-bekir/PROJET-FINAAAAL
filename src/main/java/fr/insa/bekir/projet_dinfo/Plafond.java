@@ -53,13 +53,13 @@ public class Plafond {
     }
       public double montantRevetement (Plafond plafond){
           for (int i=0;i<=listeRevetements.size();i++){
-        double montant=plafond.surface()*listeRevetements.get(i).getPrix();
-        return montant;
+        return listeRevetements.get(i).getPrix()*plafond.surface();
     }
         public double surface(){
         double surface = 0;
         double sommex=0;
         double sommey=0;
+        
         for (int i = 0; i<=listeCoins.size() - 1; i++) {
             sommex = sommex + listeCoins.get(i).getCx();
             sommey = sommey + listeCoins.get(i).getCy();
@@ -69,9 +69,9 @@ public class Plafond {
         double Moyenney = sommey/listeCoins.size();
 
         for (int i = 0; i<=listeCoins.size() - 1; i++) {
-            double cote1 = Math.sqrt((Math.abs(listeCoins.get(i).getCx())-listeCoins.get(i+1).getCx()))**2+Math.abs((listeCoins.get(i).getCy()-listeCoins.get(i+1).getCy()**2));
-            double cote2 = Math.sqrt((Math.abs(listeCoins.get(i).getCx())-Moyennex)**2+Math.abs((listeCoins.get(i).getCy()-Moyenney)**2));
-            double cote3 = Math.sqrt((Math.abs(listeCoins.get(i+1).getC)-Moyennex))**2+Math.abs((listeCoins.get(i+1).getCy()-Moyenney)**2));
+            double cote1 = Math.sqrt(Math.pow(Math.abs(listeCoins.get(i).getCx()),2)-listeCoins.get(i+1).getCx()+Math.pow(Math.abs((listeCoins.get(i).getCy()-listeCoins.get(i+1).getCy())),2));
+            double cote2 = Math.sqrt(Math.pow(Math.abs(listeCoins.get(i).getCx()-Moyennex),2)+Math.pow(Math.abs((listeCoins.get(i).getCy()-Moyenney)),2));
+            double cote3 = Math.sqrt(Math.pow((Math.abs(listeCoins.get(i+1).getCx()-Moyennex)),2)+Math.pow(Math.abs(listeCoins.get(i+1).getCy()-Moyenney),2));
             double p = (cote1+cote2+cote3)/2;
             double surfacetriangle = Math.sqrt(p*(p-cote1)*(p-cote2)*(p-cote3));
             surface = surface + surfacetriangle;
