@@ -10,7 +10,8 @@ import java.util.ArrayList;
  *
  * @author ybekir01
  */
-public class Circulation extends Niveau {
+public class Circulation{
+    int idNiveau;
     int idCirculation;
     int sol;
     int plafond;
