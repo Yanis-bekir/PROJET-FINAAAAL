@@ -49,7 +49,7 @@ public class Appartement {
         return listePiecess;
     }
 
-    public static void setListePieces(ArrayList listePieces) {
+    public void setListePieces(ArrayList listePieces) {
         Appartement.listePiecess = listePieces;
     }
     
