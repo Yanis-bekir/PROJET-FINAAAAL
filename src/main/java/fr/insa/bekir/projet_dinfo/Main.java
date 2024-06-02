@@ -10,6 +10,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -209,7 +211,11 @@ List<Batiment> B = new ArrayList<>();
             }
             Plafond plafond=new Plafond(p,coin,revetements);
             p=p+1;
-            plafond.sauvegardeplafond();
+                try {
+                    plafond.sauvegardeplafond();
+                } catch (Exception ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
             //fin creation plafond
             // creer sol
             revetements.clear();
@@ -223,11 +229,19 @@ List<Batiment> B = new ArrayList<>();
             tqR=1;
             Sol sol=new Sol(q,coin,revetements);
             q=q+1;
-            sol.sauvegardesol();
+                try {
+                    sol.sauvegardesol();
+                } catch (Exception ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
             //fin creation sol
             Pièce piece=new Pièce(l,sol,plafond,Mur);
             Piece.add(piece);
-            piece.sauvegardepièce();
+                try {
+                    piece.sauvegardepièce();
+                } catch (Exception ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
             System.out.println("Taper 0 pour arreter de rajouter des pieces");
             tqP=Lire.i();
             }
