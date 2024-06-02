@@ -10,7 +10,7 @@ import java.util.*;
  *
  * @author ybekir01
  */
-public class Revetement {
+public class Revetement  {
    int idRevetement;
    String designation;
    boolean pourMur;
