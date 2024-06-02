@@ -118,8 +118,8 @@ List<Batiment> B = new ArrayList<>();
     
             br.close();
             fr.close();
-            */
-        }
+            
+        }*/
         if (ON==2){
             List<Revetement> ListeRevetements = (ArrayList) lireRevêtementsFichier("cataloguerevetement.txt");
             System.out.println("Quel est le nom du batiment");
