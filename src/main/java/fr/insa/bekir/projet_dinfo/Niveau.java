@@ -2,43 +2,63 @@ package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.util.List;
 
-public class Niveau {
-   static int idNiveau;
-   static double hauteurSousPlafond ;
-   static ArrayList ListeAppart=new ArrayList<Appartement>(); ;
+public class Niveau  {
+   int idNiveau;
+   double hauteurSousPlafond ;
+   List<Appartement> ListeAppart = new ArrayList<>();
+   static List<Appartement> ListeApparts = new ArrayList<>();
+   static int idNiveaus;
+   static double hauteurSousPlafonds;
 
    Niveau(int id, double idhsp, ArrayList<Appartement> listappart){
         this.idNiveau = id ;
         this.hauteurSousPlafond = idhsp ;
         this.ListeAppart = listappart ;
+        this.idNiveaus=id;
+        this.hauteurSousPlafonds = idhsp;
+        this.ListeApparts = listappart;
+        
     }
    void afficher() {
        System.out.println("identifiant du niveau : " + this.idNiveau +" hauteur sous plafond : "+ this.hauteurSousPlafond+" Liste des appartements : "+ this.ListeAppart );
    }
 
-    public static int getIdNiveau() {
+    public int getIdNiveau() {
         return idNiveau;
     }
-
-    public static void setIdNiveau(int idNiveau) {
-        Niveau.idNiveau = idNiveau;
+    
+    public static int getIdNiveaus(){
+        return idNiveaus;
     }
 
-    public static double getHauteurSousPlafond() {
+    public void setIdNiveaus(int idNiveau) {
+        Niveau.idNiveaus = idNiveau;
+    }
+
+    public double getHauteurSousPlafond() {
         return hauteurSousPlafond;
     }
-
-    public static void setHauteurSousPlafond(double hauteurSousPlafond) {
-        Niveau.hauteurSousPlafond = hauteurSousPlafond;
+    
+    public static double getHauteurSousPlafonds(){
+        return hauteurSousPlafonds;
     }
 
-    public static ArrayList getListeAppart() {
+    public void setHauteurSousPlafond(double hauteurSousPlafond) {
+        Niveau.hauteurSousPlafonds = hauteurSousPlafond;
+    }
+
+    public List<Appartement> getListeAppart() {
         return ListeAppart;
     }
+    
+    public static List<Appartement> getListeApparts(){
+        return ListeApparts;
+    }
 
-    public static void setListeAppart(ArrayList ListeAppart) {
-        Niveau.ListeAppart = ListeAppart;
+    public void setListeAppart(ArrayList ListeAppart) {
+        Niveau.ListeApparts = ListeAppart;
     }
    
    
@@ -59,16 +79,18 @@ public class Niveau {
     double montantRevetement() {
         double prix=0 ;
        for (int i = 0; i<=ListeAppart.size() - 1; i++) {
-           prix=prix+ListeAppart.get(i).montantRevetement();
+           Appartement Appartement= ListeAppart.get(i);
+           prix=prix+Appartement.montantRevetement();
+           
        }
        return prix ;
    }
-   }
+   
    
    public void sauvegardeNiveau() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Niveau " + ";" + Niveau.getIdNiveau() + ";" + Niveau.getHauteurSousPlafond() + ";" + Niveau.getListeAppart() + "\n");
+            writer.write("Niveau " + ";" + Niveau.getIdNiveaus() + ";" + Niveau.getHauteurSousPlafonds() + ";" + Niveau.getListeApparts() + "\n");
             }
         }
 }
