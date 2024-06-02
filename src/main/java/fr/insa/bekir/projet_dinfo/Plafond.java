@@ -2,6 +2,7 @@ package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.util.List;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,13 +15,17 @@ import java.io.*;
  */
 public class Plafond {
     static int idPlafond;
-    static ArrayList<Coin> listeCoins;
-    static ArrayList listeRevetements=new ArrayList<Revetement>();;
+    List<Coin> listeCoins = new ArrayList<>();
+    List<Revetement> listeRevetements = new ArrayList<>();
+    static List<Coin> listeCoinss = new ArrayList<>();
+    static List<Revetement> listeRevetementss = new ArrayList<>();
    
     Plafond(int id, ArrayList<Coin> listeCoins, ArrayList<Revetement> idRevetement){
         this.idPlafond= id;
         this.listeCoins= listeCoins;
         this.listeRevetements = idRevetement;
+        this.listeRevetementss = idRevetement;
+        this.listeCoinss=ListeCoins;
     }
 
     public static int getIdPlafond() {
@@ -31,20 +36,28 @@ public class Plafond {
         Plafond.idPlafond = idPlafond;
     }
 
-    public static ArrayList getListeCoins() {
+    public static List<Coin> getListeCoinss() {
+        return listeCoinss;
+    }
+    
+    public  List<Coin>  getListeCoins() {
         return listeCoins;
     }
 
     public static void setListeCoins(ArrayList listeCoins) {
-        Plafond.listeCoins = listeCoins;
+        Plafond.listeCoinss = listeCoins;
     }
 
-    public static ArrayList getListeRevetements() {
+    public static List<Revetement> getListeRevetementss() {
+        return listeRevetementss;
+    }
+    
+    public  List<Revetement> getListeRevetements() {
         return listeRevetements;
     }
 
     public static void setListeRevetements(ArrayList listeRevetements) {
-        Plafond.listeRevetements = listeRevetements;
+        Plafond.listeRevetementss = listeRevetements;
     }
    
     @Override
@@ -53,12 +66,15 @@ public class Plafond {
     }
       public double montantRevetement (Plafond plafond){
           for (int i=0;i<=listeRevetements.size();i++){
-        return listeRevetements.get(i).getPrix()*plafond.surface();
     }
+          return listeRevetements.get(i).getPrix()*plafond.surface();
+      }
+      
         public double surface(){
         double surface = 0;
         double sommex=0;
         double sommey=0;
+
         
         for (int i = 0; i<=listeCoins.size() - 1; i++) {
             sommex = sommex + listeCoins.get(i).getCx();
@@ -83,7 +99,7 @@ public class Plafond {
     public void sauvegardeplafond() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Plafond " + ";" + Plafond.getIdPlafond() + ";" + Plafond.getListeCoins() + ";" + Plafond.getListeRevetements() + "\n");
+            writer.write("Plafond " + ";" + Plafond.getIdPlafond() + ";" + Plafond.getListeCoinss() + ";" + Plafond.getListeRevetementss() + "\n");
             }
         }
        
