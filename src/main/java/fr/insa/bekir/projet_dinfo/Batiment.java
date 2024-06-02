@@ -16,7 +16,7 @@ public class Batiment {
     static String idBatiment;
     static ArrayList listeNiveaux=new ArrayList<Niveau>();;
 
-    Batiment(String id, ArrayList idNiveau) {
+    Batiment(String id, ArrayList<Niveau> idNiveau) {
         this.idBatiment = id ;
         this.listeNiveaux = idNiveau ;
     }
