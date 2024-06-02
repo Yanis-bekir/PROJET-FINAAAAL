@@ -67,7 +67,7 @@ public class Revetement  {
 
    
         // Lecture du fichier texte
-        List<Revetement> revêtements = lireRevêtementsFichier("revêtements.txt");
+        List<Revetement> revêtements = lireRevêtementsFichier("cataloguerevetement.txt");
 
 
         // Recherche du revêtement
