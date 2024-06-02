@@ -74,8 +74,8 @@ public class App extends Application {
                 if (Nom == "Coin"){
                     
                      String[] elements = ligne.split(";");
-                     Coin(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3]));
-                
+                     Coin(Integer.parseInt(elements[1]),Double.parseDouble(elements[2]),Double.parseDouble(elements[3]));
+                     
                 }
                 
                 else if (Nom == "Mur"){
