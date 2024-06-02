@@ -1,0 +1,44 @@
+0001;Carrelage;1;1;0;99.93
+0002;Carrelage;1;1;0;75.90
+0003;Carrelage;1;1;0;99.93
+0004;Carrelage;1;1;0;62,84
+0005;Carrelage;1;1;0;99.93
+0006;Carrelage;1;1;0;85.60
+1001;Papier peint;1;0;0;5.99
+1002;Papier peint;1;0;0;5.99
+1003;Papier peint;1;0;0;10.99
+1004;Papier peint;1;0;0;5.99
+1005;Papier peint;1;0;0;5.99
+1006;Papier peint;1;0;0;5.99
+1007;Papier peint;1;0;0;5.99
+2001;Stratifie;0;1;0;17.99
+2002;Stratifie;0;1;0;17.99
+2003;Stratifie;0;1;0;17.99
+2004;Stratifie;0;1;0;17.99
+2005;Stratifie;0;1;0;17.99
+2006;Stratifie;0;1;0;17.99
+2007;Stratifie;0;1;0;17.99
+3001;Peinture;1;0;1;1.00
+3002;Peinture;1;0;1;1.00
+3003;Peinture;1;0;1;1.00
+3004;Peinture;1;0;1;1.00
+3005;Peinture;1;0;1;1.00
+3006;Peinture;1;0;1;1.00
+3007;Peinture;1;0;1;1.00
+3008;Peinture;1;0;1;1.00
+3009;Peinture;1;0;1;1.00
+3010;Peinture;1;0;1;1.00
+3011;Peinture;1;0;1;1.00
+3012;Peinture;1;0;1;1.00
+3013;Peinture;1;0;1;1.00
+3014;Peinture;1;0;1;1.00
+3015;Peinture;1;0;1;1.00
+3016;Peinture;1;0;1;1.00
+3017;Peinture;1;0;1;1.00
+3018;Peinture;1;0;1;1.00
+3019;Peinture;1;0;1;1.00
+3020;Peinture;1;0;1;1.00
+3021;Peinture;1;0;1;1.00
+3022;Peinture;1;0;1;1.00
+3023;Peinture;1;0;1;1.00
+3024;Peinture;1;0;1;1.00
