@@ -18,7 +18,7 @@ public class Appartement {
     List<Pièce> listePieces = new ArrayList<>();
     static List<Pièce> listePiecess = new ArrayList<>();
     
-    public Appartement(int id, int idNiveau, ArrayList<Pièce> nbrpieces){
+    public Appartement(int id, int idNiveau, List<Pièce> nbrpieces){
             this.idAppartement = id ; 
             this.idNiveauAppartement = idNiveau ;
             this.listePieces = nbrpieces ;
