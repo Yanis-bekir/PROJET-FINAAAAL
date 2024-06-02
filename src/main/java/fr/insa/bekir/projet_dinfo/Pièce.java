@@ -25,7 +25,7 @@ public class Pièce {
     static List<Mur> listeMurss = new ArrayList<>();
 
 
-   Pièce(int idPiece,Sol sol, Plafond plafond, ArrayList<Mur> idmurs){
+   Pièce(int idPiece,Sol sol, Plafond plafond, List<Mur> idmurs){
         this.idPiece = idPiece ;
         this.sol = sol ; 
         this.plafond = plafond ; 
