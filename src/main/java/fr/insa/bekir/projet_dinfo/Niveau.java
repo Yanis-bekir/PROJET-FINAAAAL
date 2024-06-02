@@ -57,7 +57,7 @@ public class Niveau  {
         return ListeApparts;
     }
 
-    public void setListeAppart(ArrayList ListeAppart) {
+    public void setListeAppart(List<Appartement> ListeAppart) {
         Niveau.ListeApparts = ListeAppart;
     }
    
