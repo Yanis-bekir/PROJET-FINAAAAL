@@ -44,7 +44,7 @@ public class Batiment {
         return listeNiveaux;
     }
 
-    public static void setListeNiveauxs(ArrayList listeNiveaux) {
+    public void setListeNiveaux(List listeNiveaux) {
         Batiment.listeNiveauxs = listeNiveaux;
     }
     
