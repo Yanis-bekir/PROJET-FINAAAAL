@@ -25,7 +25,7 @@ public class Plafond {
         this.listeCoins= listeCoins;
         this.listeRevetements = idRevetement;
         this.listeRevetementss = idRevetement;
-        this.listeCoinss=ListeCoins;
+        this.listeCoinss=listeCoins;
     }
 
     public static int getIdPlafond() {
