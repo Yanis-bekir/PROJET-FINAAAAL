@@ -18,15 +18,17 @@ public class Mur {
     public static int nbrPortes;
     public static int nbrFenetre;
     static ArrayList  ListeRevetements =new ArrayList<Revetement>();
+    static Niveau niveau;
     
     
-    Mur(int id, Coin coindebut, Coin coinfin, int nbrPortes, int nbrFenetre, ArrayList idRevetement) {
+    Mur(int id, Coin coindebut, Coin coinfin, int nbrPortes, int nbrFenetre, ArrayList<Revetement> idRevetement,Niveau niveau) {
     this.idmur = id;
     this.coindebut = coindebut;
     this.coinfin = coinfin;
     this.nbrFenetre = nbrFenetre;
     this.nbrPortes = nbrPortes;
     this.ListeRevetements = idRevetement;
+    this.niveau = niveau;
     }
 
     public static int getIdmur() {
@@ -88,7 +90,7 @@ public class Mur {
     }
     
     public double surface (){
-       double s=Math.sqrt(Math.pow(coinfin.getCx()-coindebut.getCx(),2)+Math.pow(coinfin.getCy()-coindebut.getCy(),2))*hsp;
+       double s=Math.sqrt(Math.pow(coinfin.getCx()-coindebut.getCx(),2)+Math.pow(coinfin.getCy()-coindebut.getCy(),2))*niveau.getHauteurSousPlafond();
        return s;
     }
     

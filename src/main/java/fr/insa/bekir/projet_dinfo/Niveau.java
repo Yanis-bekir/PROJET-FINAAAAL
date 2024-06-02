@@ -8,7 +8,7 @@ public class Niveau {
    static double hauteurSousPlafond ;
    static ArrayList ListeAppart=new ArrayList<Appartement>(); ;
 
-   Niveau(int id, double idhsp, ArrayList listappart){
+   Niveau(int id, double idhsp, ArrayList<Appartement> listappart){
         this.idNiveau = id ;
         this.hauteurSousPlafond = idhsp ;
         this.ListeAppart = listappart ;

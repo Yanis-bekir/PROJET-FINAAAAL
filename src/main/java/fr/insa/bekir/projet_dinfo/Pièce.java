@@ -24,7 +24,7 @@ public class Pièce {
     private MainPane vue;
 
 
-   Pièce(int idPiece,Sol sol, Plafond plafond, ArrayList idmurs){
+   Pièce(int idPiece,Sol sol, Plafond plafond, ArrayList<Mur> idmurs){
         this.idPiece = idPiece ;
         this.sol = sol ; 
         this.plafond = plafond ; 
@@ -74,7 +74,7 @@ public class Pièce {
        return sol.surface();
    }
    double montantRevetement(){
-       double prix=sol.montantRevetement()+plafond.montantRevetement();
+       double prix=sol.montantRevetement(sol)+plafond.montantRevetement(plafond);
        for (int i = 0; i<=listeMurs.size() - 1; i++) {
            prix=prix+listeMurs.get(i).montantRevetement(listeMurs.get(i));
        }

@@ -25,7 +25,7 @@ public class Main {
  */
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, Exception {
        
         int ON;
         String Sauvegarde;
@@ -46,7 +46,7 @@ ArrayList B=new ArrayList<Batiment>();
 
             System.out.println("Quels est le nom du fichier?");
             Sauvegarde = Lire.S();
-             String fichier = Sauvegarde;
+            String fichier = Sauvegarde;
 
             // Création d'un objet FileReader pour lire le fichier
             FileReader fr = new FileReader(fichier);
@@ -65,7 +65,7 @@ ArrayList B=new ArrayList<Batiment>();
                 if (Nom == "Coin"){
                     
                      String[] elements = ligne.split(";");
-                     C.add(Coin(Integer.parseInt(elements[1]),Integer.parseInt(elements[2]),Integer.parseInt(elements[3])));
+                     C.add(Coin(Integer.parseInt(elements[1]),Double.parseDouble(elements[2]),Double.parseDouble(elements[3])));
                 
                 }
                 
@@ -193,7 +193,7 @@ ArrayList B=new ArrayList<Batiment>();
             Mur.add(new Mur(n,coinfin,coindebut,nbrporte,nbrfenetre,revetements));
             Mur.get(n).sauvegardemur();
             n=n+1;
-            tqP=1;
+
             System.out.println("Taper 0 pour arreter de rajouter des murs");
             tqM=Lire.i();
             }
