@@ -245,20 +245,20 @@ List<Batiment> B = new ArrayList<>();
             System.out.println("Taper 0 pour arreter de rajouter des pieces");
             tqP=Lire.i();
             }
-            Appartement.setListePieces(Piece);
+            Appartement.get(j).setListePieces(Piece);
             tqP=1;
             System.out.println("Taper 0 pour arreter de rajouter des Appartements");
             tqA=Lire.i();
             
             }
-            Appartement.sauvegardeAppartement();
+            Appartement.get(j).sauvegardeAppartement();
             tqA=1;
             System.out.println("Taper 0 pour arreter de rajouter des niveau et finir le batiment");
             tqN=Lire.i();
             }
-            Niveau.setListeAppart(Appartement);
+            Niveau.get(j).setListeAppart(Appartement);
             Batiment.setListeNiveaux(Niv);
-            Niveau.sauvegardeNiveau();
+            Niveau.get(j).sauvegardeNiveau();
             Batiment.montantRevetement();
             
             
