@@ -2,6 +2,7 @@ package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.util.List;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,11 +15,13 @@ import java.io.*;
  */
 public class Batiment {
     static String idBatiment;
-    static ArrayList listeNiveaux=new ArrayList<Niveau>();;
+    List<Niveau> listeNiveaux = new ArrayList<>();
+    static List<Niveau> listeNiveauxs = new ArrayList<>();
 
     Batiment(String id, ArrayList<Niveau> idNiveau) {
         this.idBatiment = id ;
         this.listeNiveaux = idNiveau ;
+        this.listeNiveauxs = idNiveau;
     }
     
     void afficher() {
@@ -33,21 +36,20 @@ public class Batiment {
         Batiment.idBatiment = idBatiment;
     }
 
-    public static ArrayList getListeNiveaux() {
+    public static List<Niveau> getListeNiveauxs() {
+        return listeNiveauxs;
+    }
+    
+    public List<Niveau> getListeNiveaux() {
         return listeNiveaux;
     }
 
-    public static void setListeNiveaux(ArrayList listeNiveaux) {
-        Batiment.listeNiveaux = listeNiveaux;
+    public static void setListeNiveauxs(ArrayList listeNiveaux) {
+        Batiment.listeNiveauxs = listeNiveaux;
     }
     
    
-    void lireBatiment{
-}
-    void devisbatiment{
-}
-    void dessiner{
-}
+
     double surfaceBatiment() {
         double s=0 ;
         for (int i = 0; i<=listeNiveaux.size() - 1; i++) {
@@ -66,7 +68,7 @@ public class Batiment {
     public void sauvegardebatiment() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Batiment " + ";" + Batiment.getIdBatiment() + ";" + Batiment.getListeNiveaux() + "\n");
+            writer.write("Batiment " + ";" + Batiment.getIdBatiment() + ";" + Batiment.getListeNiveauxs() + "\n");
             }
         }
 }
