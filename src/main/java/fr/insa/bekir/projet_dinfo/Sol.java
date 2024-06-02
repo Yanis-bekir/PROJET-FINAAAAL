@@ -18,7 +18,7 @@ public class Sol {
     static List<Revetement> ListeRevetementss= new ArrayList<>();
     
 
-    Sol(int id, ArrayList<Coin> Coins, ArrayList<Revetement> idRevetements){
+    Sol(int id, List<Coin> Coins, List<Revetement> idRevetements){
     this.idSol=id;
     this.ListeCoins=Coins;
     this.ListeRevetements=idRevetements;
