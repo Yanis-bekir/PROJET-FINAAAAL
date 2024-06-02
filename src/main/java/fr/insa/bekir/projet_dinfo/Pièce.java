@@ -4,7 +4,6 @@
  */
 package fr.insa.bekir.projet_dinfo;
 
-import com.mycompany.mavenproject5.MainPane;
 import java.util.ArrayList;
 import java.io.*;
 import java.util.List;
