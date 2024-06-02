@@ -24,7 +24,7 @@ public class Mur {
     static Niveau niveau;
     
     
-    Mur(int id, Coin coindebut, Coin coinfin, int nbrPortes, int nbrFenetre, ArrayList<Revetement> idRevetement,Niveau niveau) {
+    Mur(int id, Coin coindebut, Coin coinfin, int nbrPortes, int nbrFenetre, List<Revetement> idRevetement,Niveau niveau) {
     this.idmur = id;
     this.coindebut = coindebut;
     this.coinfin = coinfin;
