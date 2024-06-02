@@ -6,6 +6,7 @@ package fr.insa.bekir.projet_dinfo;
 
 import java.util.ArrayList;
 import java.io.*;
+import java.util.List;
 
 /**
  *
@@ -14,12 +15,14 @@ import java.io.*;
 public class Appartement {
     static int idAppartement ;
     static int idNiveauAppartement ;
-    static ArrayList listePieces =new ArrayList<Pièce>();
+    List<Pièce> listePieces = new ArrayList<>();
+    static List<Pièce> listePiecess = new ArrayList<>();
     
     public Appartement(int id, int idNiveau, ArrayList<Pièce> nbrpieces){
             this.idAppartement = id ; 
             this.idNiveauAppartement = idNiveau ;
             this.listePieces = nbrpieces ;
+            this.listePiecess = nbrpieces;
     }
 
     public static int getIdAppartement() {
@@ -38,12 +41,16 @@ public class Appartement {
         Appartement.idNiveauAppartement = idNiveauAppartement;
     }
 
-    public static ArrayList getListePieces() {
+    public List<Pièce> getListePieces() {
         return listePieces;
+    }
+    
+    static public List<Pièce> getListePiecess() {
+        return listePiecess;
     }
 
     public static void setListePieces(ArrayList listePieces) {
-        Appartement.listePieces = listePieces;
+        Appartement.listePiecess = listePieces;
     }
     
     double surfaceAppartement() {
@@ -66,7 +73,7 @@ public class Appartement {
     public void sauvegardeAppartement() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
-            writer.write("Apartement " + ";" + Appartement.getIdAppartement() + ";" + Appartement.getIdNiveauAppartement() + ";" + Appartement.getListePieces() + "\n");
+            writer.write("Apartement " + ";" + Appartement.getIdAppartement() + ";" + Appartement.getIdNiveauAppartement() + ";" + Appartement.getListePiecess() + "\n");
             }
         }
 }
