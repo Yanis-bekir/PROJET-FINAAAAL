@@ -28,7 +28,7 @@ public class Main  {
  */
 
 
-    public static void main(String[] args) throws IOException, Exception {
+    public static void main(String[]args) throws IOException, Exception {
        
         int ON;
         String Sauvegarde;
@@ -256,7 +256,7 @@ List<Batiment> B = new ArrayList<>();
             System.out.println("Taper 0 pour arreter de rajouter des niveau et finir le batiment");
             tqN=Lire.i();
             }
-            Niveau.get(j).setListeAppart(Appartement);
+            Niv.get(j).setListeAppart(Appartement);
             Batiment.setListeNiveaux(Niv);
             Niveau.get(j).sauvegardeNiveau();
             Batiment.montantRevetement();
