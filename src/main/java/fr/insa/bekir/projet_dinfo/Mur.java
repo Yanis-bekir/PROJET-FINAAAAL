@@ -5,6 +5,8 @@
 package fr.insa.bekir.projet_dinfo;
 import java.util.ArrayList;
 import java.io.*;
+import java.util.List;
+
 
 /**
  *
@@ -17,7 +19,8 @@ public class Mur {
     public static Coin coinfin;
     public static int nbrPortes;
     public static int nbrFenetre;
-    static ArrayList  ListeRevetements =new ArrayList<Revetement>();
+    List<Revetement> ListeRevetements = new ArrayList<>();
+    static List<Revetement> ListeRevetementss = new ArrayList<>();
     static Niveau niveau;
     
     
@@ -71,8 +74,8 @@ public class Mur {
         Mur.nbrFenetre = nbrFenetre;
     }
 
-    public static ArrayList getListeRevetements() {
-        return ListeRevetements;
+    public static List<Revetement> getListeRevetements() {
+        return ListeRevetementss;
     }
 
     public void setListeRevetements(ArrayList ListeRevetements) {
@@ -94,12 +97,14 @@ public class Mur {
        return s;
     }
     
-    public static double montantRevetement (Mur mur){
+    public double montantRevetement (Mur mur){
+        double montant = 0 ;
         for (int i=0;i<=ListeRevetements.size();i++){
-        double montant=mur.surface()*ListeRevetements.get(i).getPrix()-nbrFenetre*Fenetre.surfacefenetre();
-        return montant; 
+        montant=mur.surface()*ListeRevetements.get(i).getPrix()-nbrFenetre*Fenetre.surfacefenetre();
+      
     }
-    }
+        return montant;
+   }
     public void sauvegardemur() throws Exception{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("Sauvegarde.txt"))) {
             // Écriture des revêtements dans le fichier
